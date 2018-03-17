@@ -5,6 +5,7 @@
 #' @keywords  Run Launch xROI App
 #' @export
 #' @import shiny
+#' @rawNamespace import(shinyjs, except = c(runExample, updateColourInput, reset, colourPicker, colourInput, show))
 #' @import shinythemes
 #' @rawNamespace import(plotly, except = select)
 #' @import raster
@@ -24,6 +25,7 @@
 #' @rawNamespace import(data.table, except = c(month, hour, quarter, week, year, wday, second, minute, mday, yday, isoweek, shift))
 #' @rawNamespace import(lubridate, except = origin)
 #' @import moments
+#' @importFrom grDevices rgb2hsv
 #' @examples
 #'
 #' #Launch xROI app
