@@ -4,14 +4,13 @@
 #' @param inputDir path to the input directory as a character string.
 #' @keywords  Run Launch ROIx App
 #' @export
-#' @import
 #' @examples
 #'
 #' #Launch ROIx app
 #' runROIx()
 #'
 runROIx <- function(inputDir='.'){
-ui <- source('.ui.R')
-server <- source('.server.R')
+ui <- source('R/.ui.R')
+server <- source('R/.server.R')
 
 }

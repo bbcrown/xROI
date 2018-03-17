@@ -7,4 +7,4 @@ There were no ERRORs or WARNINGs.
 
 
 ## Dependencies
-This package depends on the JAGS engine and the "rjags" R package.
+This package depends on the GDAL engine and the "rgdal" R package.
