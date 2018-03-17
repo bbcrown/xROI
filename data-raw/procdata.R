@@ -1,0 +1,6 @@
+zip(zipfile = 'data-raw/example.zip', files = dir(path = 'data-raw/example/', full.names = T, recursive = T))
+example <- readBin( file('data-raw/example.zip', 'rb'), 'raw', n = 10^13)
+file.remove('data-raw/example.zip')
+devtools::use_data(example, overwrite = T)
+closeAllConnections()
+rm(list = ls())

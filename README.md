@@ -1,17 +1,16 @@
-# ROIx
+# xROI
 An offline toolkit to delinate region of interest and extract time-series data from digital repeat photography images.
 
-### Easiest way is to use runGitHub
+### Easy to launch the app:
 
 ```{r, echo=TRUE}
-library(ROIx)
 
-ROIx::runROIx()
+xROI::runROIx()
 
 ```
 
 The R package is developed and maintained by [Bijan Seyednarollah](https://bnasr.github.io/).
 
-Most recent release is available from: https://github.com/bnasr/ROIx
+Most recent release is available from: https://github.com/bnasr/xROI
 
 

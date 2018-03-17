@@ -1,1 +1,1 @@
-## 03-16-2018: The very first version of ROIx R package was just released!
+## 03-16-2018: The very first version of xROI R package was just released!

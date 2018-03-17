@@ -5,6 +5,5 @@
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
 
-
 ## Dependencies
-This package depends on the GDAL engine and the "rgdal" R package.
+This package extensively depends on the GDAL engine and rgdal, shiny and plotly R packages.
