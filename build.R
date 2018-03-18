@@ -20,6 +20,6 @@ f <- build('toCRAN')
 devtools::check('toCRAN')
 devtools::revdep_check('toCRAN')
 system(command = paste0('R CMD check --as-cran ', basename(f)))
-system('rm -r toCRAN')
 
+# system('rm -r toCRAN')
 # devtools::submit_cran()

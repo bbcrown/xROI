@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/125579481.svg)](https://zenodo.org/badge/latestdoi/125579481)
+
 # xROI
 An offline toolkit to delinate region of interest and extract time-series data from digital repeat photography images.
 
