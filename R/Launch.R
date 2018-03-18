@@ -5,7 +5,7 @@
 #' @keywords  Run Launch xROI App
 #' @export
 #' @import shiny
-#' @rawNamespace import(shinyjs, except = c(runExample, updateColourInput, reset, colourPicker, colourInput, show))
+#' @rawNamespace import(shinyjs, except = c(runExample, updateColourInput, reset, colourPicker, colourInput, show, click, removeClass))
 #' @import shinythemes
 #' @rawNamespace import(plotly, except = select)
 #' @import raster
@@ -26,17 +26,24 @@
 #' @rawNamespace import(lubridate, except = origin)
 #' @import moments
 #' @importFrom grDevices rgb2hsv
+#' @importFrom graphics abline axis locator mtext par polygon rasterImage rect
+#' @import methods
+#' @importFrom stats approx na.omit sd
+#' @importFrom utils data download.file read.csv read.table setTxtProgressBar txtProgressBar unzip write.table zip
+#'
 #' @examples
 #'
 #' #Launch xROI app
 #' xROI::Launch()
 #'
 Launch <- function(inputDir= NULL){
-  data('example')
+  data('dukehw', package = 'xROI', envir = environment())
   tmpfile <- tempfile(fileext = '.zip')
-  writeBin(example, tmpfile)
-  exdir <- paste0(gettmpdir())
-  unzip(zipfile = tmpfile, exdir = exdir)
+  writeBin(dukehw, tmpfile)
+
+  unzip(zipfile = tmpfile, exdir = gettmpdir())
+
+  exdir <- paste0(gettmpdir(), '/example')
 
   ## Only run examples in interactive R sessions
   if (interactive()) {
@@ -48,7 +55,12 @@ Launch <- function(inputDir= NULL){
 
 
 
-
+gettmpdir <- function() {
+  if (.Platform$OS.type == 'windows')
+    Sys.getenv('R_USER')
+  else
+    '/tmp'
+}
 
 getServer <- function(exdir, inputDir = NULL){
   return(function(input, output, session) {
@@ -59,7 +71,7 @@ getServer <- function(exdir, inputDir = NULL){
                          slideShow = 0,
                          filetbl = NULL,
                          # filelist = '.',
-                         folderpath = paste0(gettmpdir(), '/example'), #'./example',
+                         folderpath = exdir, #paste0(gettmpdir(), '/example'), #'./example',
                          # withDate = FALSE,
                          # roots = list('Working directory'='.', Home='~', root='/'),
                          imgs = NULL,
@@ -94,7 +106,7 @@ getServer <- function(exdir, inputDir = NULL){
       f <- paste(rv$folderpath, 'filelist.csv', sep = '/')
 
       if(!file.exists(f)){
-        showModal(strong(modalDialog('filelist.csv was not found in the folder!',
+        showModal(strong(modalDialog(paste(f, ' was not found!'),
                                      style='background-color:#3b3a35; color:#fce319; ',
                                      footer =  modalButton("OK"),
                                      easyClose = F, size = 's')))

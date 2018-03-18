@@ -1,0 +1,16 @@
+#
+# ROI List for example
+#
+# Site: example
+# Veg Type: DB
+# ROI ID Number: 0001
+# Owner: bijan
+# Creation Date: 2018-02-21
+# Creation Time: 16:11:21
+# Update Date: 2018-02-21
+# Update Time: 16:12:31
+# Description: entire deciduous canopy
+#
+start_date,start_time,end_date,end_time,maskfile,sample_image
+2015-01-01,12:01:09,9999-12-31,00:00:00,example_DB_0001_01.tif,dukehw_2015_01_01_120109.jpg
+
