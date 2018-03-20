@@ -17,6 +17,7 @@ This function launch the app by opening the default web browser.
 #Launch xROI app
 xROI::Launch()
 
+
 }
 \keyword{App}
 \keyword{Launch}
