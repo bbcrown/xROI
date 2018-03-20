@@ -21,5 +21,5 @@ citEntry(entry = "Manual",
                     "Andrew D. Richardson"),
          title = "xROI: A Toolkit to Delinate Region of Interests (ROI's) and Extract Time-series Data from Digital Repeat Photography Images",
          year = 2018,
-         url = "http://doi.org/10.5281/zenodo.1202274",
-         textVersion = "Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson (2018). xROI: A Toolkit to Delinate Region of Interests (ROI's) and Extract Time-series Data from Digital Repeat Photography Images DOI:10.5281/zenodo.1202274")
+         url = "http://doi.org/10.5281/zenodo.1204363",
+         textVersion = "Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson (2018). xROI: A Toolkit to Delinate Region of Interests (ROI's) and Extract Time-series Data from Digital Repeat Photography Images DOI:10.5281/zenodo.1204363")
