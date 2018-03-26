@@ -13,6 +13,7 @@ install(pkg = '.')
 
 # xROI::Launch()
 
+system('rm -r toCRAN')
 system('mkdir toCRAN', ignore.stderr = T)
 system(paste0('rm ', PACKAGE.NAME, '*.tar.gz'), ignore.stderr = T)
 system('cp -r R man DESCRIPTION NAMESPACE LICENSE inst toCRAN')
@@ -21,5 +22,4 @@ devtools::check('toCRAN')
 devtools::revdep_check('toCRAN')
 system(command = paste0('R CMD check --as-cran ', basename(f)))
 
-# system('rm -r toCRAN')
 # devtools::submit_cran()
