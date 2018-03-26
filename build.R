@@ -4,22 +4,18 @@ if(!require("roxygen2")) {devtools::install_github("klutometis/roxygen"); librar
 
 
 rm(list = ls())
-# create('~/Projects/xROI/')
-# source('data-raw/procdata.R')
 PACKAGE.NAME = 'xROI'
 file.remove('NAMESPACE')
-document(pkg = '.')
-install(pkg = '.')
+unlink('toCRAN', recursive = TRUE)
+system('mkdir toCRAN', ignore.stderr = TRUE)
+system(paste0('rm ', PACKAGE.NAME, '*.tar.gz'), ignore.stderr = TRUE)
 
-# xROI::Launch()
-
-system('rm -r toCRAN')
-system('mkdir toCRAN', ignore.stderr = T)
-system(paste0('rm ', PACKAGE.NAME, '*.tar.gz'), ignore.stderr = T)
+# create('~/Projects/xROI/')
+devtools::document(pkg = '.')
+devtools::install(pkg = '.')
 system('cp -r R man DESCRIPTION NAMESPACE LICENSE inst toCRAN')
-f <- build('toCRAN')
+f <- devtools::build('toCRAN')
 devtools::check('toCRAN')
-devtools::revdep_check('toCRAN')
 system(command = paste0('R CMD check --as-cran ', basename(f)))
 
 # devtools::submit_cran()
