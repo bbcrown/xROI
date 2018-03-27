@@ -16,7 +16,6 @@
 #' m <- rasterizeROI(pnts, imgSize)
 #' xROI::addMask(m, add = FALSE)
 #'
-# shapefile to mask raster given coordinates of the polygon
 rasterizeROI <- function(pnts, imgSize){
 
   pnts <- t(apply(pnts, 1, '*', imgSize))
