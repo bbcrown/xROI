@@ -4,6 +4,7 @@ if(!require("roxygen2")) {devtools::install_github("klutometis/roxygen"); librar
 
 
 rm(list = ls())
+
 file.remove('NAMESPACE')
 unlink('toCRAN', recursive = TRUE)
 system('mkdir toCRAN', ignore.stderr = TRUE)
