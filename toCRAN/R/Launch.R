@@ -2,6 +2,7 @@
 #'
 #' This function launch the app by opening the default web browser.
 #' @param inputDir path to the input directory as a character string.
+#' @param Interactive logical variable to force an interactive session
 #' @keywords  Run Launch xROI App
 #' @export
 #' @import shiny
@@ -37,13 +38,13 @@
 #' xROI::Launch()
 #'
 #'
-Launch <- function(inputDir= NULL){
+Launch <- function(inputDir= NULL, Interactive = FALSE){
   exampleDir <- system.file('example', package = "xROI")
   tmpdir <- tempdir()
   file.copy(exampleDir, tmpdir, recursive = T)
   exampleDir <- file.path(tmpdir, 'example')
   ## Only run examples in interactive R sessions
-  if (interactive()) {
+  if (interactive()|Interactive) {
     ui <- getUI()
     server <- getServer(exampleDir, inputDir)
     shinyApp(ui, server, options = list(launch.browser = TRUE))

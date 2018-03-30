@@ -1,6 +1,6 @@
 Package: xROI
 Title: Delinate Region of Interests (ROI's) and Extract Time-Series Data from Digital Repeat Photography Images
-Version: 0.1.1
+Version: 0.1.2
 Date: 2018-03-26
 Author: Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson
 Maintainer: Bijan Seyednasrollah <bijan.s.nasr@gmail.com>

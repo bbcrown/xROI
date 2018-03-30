@@ -4,10 +4,12 @@
 \alias{Launch}
 \title{Launch xROI app}
 \usage{
-Launch(inputDir = NULL)
+Launch(inputDir = NULL, Interactive = FALSE)
 }
 \arguments{
 \item{inputDir}{path to the input directory as a character string.}
+
+\item{Interactive}{logical variable to force an interactive session}
 }
 \description{
 This function launch the app by opening the default web browser.

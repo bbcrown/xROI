@@ -997,7 +997,7 @@ getServer <- function(exdir, inputDir = NULL){
         axis(1, at = DT$Date, labels = as.character(DT$Label), font=2, cex=1.2)
         par(new=T)
         plotCLArray(cliProcessed())
-        if(!is.null(rv$cliclickID)) abline(v=rv$cliclickID-0.5, col='red')
+        if(!is.null(rv$cliclickID)) abline(v=rv$cliclickID-0.5, col='red', lwd = 3)
       }
     )
 
