@@ -12,10 +12,13 @@ warnings_are_errors: false
 #  only:
 #    - release
 
+before_install:
+  - sudo add-apt-repository ppa:marutter/rrutter -y
+  - sudo apt-get update
+
 # Code coverage
 r_packages:
   - covr
-  - MixSIAR
 
 ## For a CRAN package
 #  - ./travis-tool.sh install_r <package>
