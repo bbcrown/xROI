@@ -144,7 +144,7 @@ background-color: #808080;
 
                             fluidRow(
                               column(6, actionButton("saveROI", "Save ROI", icon = icon('list-alt'), width = "100%")),
-                              column(6, downloadButton("downloadROI", "Download ROI files"))
+                              column(6, downloadButton("downloadROI", "Download ROI"))
                             )
 
                ),
