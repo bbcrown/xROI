@@ -1,4 +1,4 @@
-##xROI [![DOI](https://zenodo.org/badge/125579481.svg)](https://zenodo.org/badge/latestdoi/125579481)
+## xROI [![DOI](https://zenodo.org/badge/125579481.svg)](https://zenodo.org/badge/latestdoi/125579481)
 [![CRAN
 status](http://www.r-pkg.org/badges/version-last-release/xROI)](https://cran.r-project.org/package=xROI)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
