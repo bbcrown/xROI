@@ -1,6 +1,28 @@
 language: r
-cache: packages
-r:
-  - oldrel
-  - release
-  - devel
+sudo: required
+warnings_are_errors: false
+
+# blacklist
+# branches:
+#  except:
+#    - master
+
+# whitelist
+# branches:
+#  only:
+#    - release
+
+# Code coverage
+r_packages:
+  - covr
+  - MixSIAR
+
+## For a CRAN package
+#  - ./travis-tool.sh install_r <package>
+
+#install:
+#  ## For installing all CRAN dependencies using rpack's DESCRIPTION
+#  - ./travis-tool.sh install_deps
+
+after_success:
+- Rscript -e 'library(covr); codecov()'
