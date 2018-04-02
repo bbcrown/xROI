@@ -15,6 +15,10 @@ warnings_are_errors: false
 before_install:
   - sudo add-apt-repository ppa:marutter/rrutter -y
   - sudo apt-get update
+  - sudo apt-get install gdal
+
+r_binary_packages:
+  - rgdal
 
 # Code coverage
 r_packages:
