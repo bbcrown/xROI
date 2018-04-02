@@ -36,7 +36,7 @@ Launch()
 ```
 
 or form the command line (e.g. shell in Linux, Terminal in macOS and Command Prompt in Windows machines) where an R engine is already installed by:
-```{r, echo=TRUE}
+```{shell, echo=TRUE}
 
 Rscript -e “xROI::Launch(Interactive = TRUE)”
 
