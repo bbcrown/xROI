@@ -7,14 +7,17 @@
 drawPolygon(col = "#80303080", lty = 1, ...)
 }
 \arguments{
-\item{col}{color value of the polygon polygon}
+\item{col}{a character string, color value of the polygon polygon}
 
-\item{lty}{lty variable as line type}
+\item{lty}{a numeric value, lty variable as line type}
 
-\item{...}{passing graphical parameters tp}
+\item{...}{passing graphical arguments}
+}
+\value{
+the coodinates of the clicked points
 }
 \description{
-This function provides an interactive tool for drawing of polygons by user clicks on the plot
+This function provides an interactive tool for drawing of polygons by user clicks on the plotted graphics
 }
 \examples{
 

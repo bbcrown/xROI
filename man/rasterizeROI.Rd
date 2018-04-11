@@ -7,9 +7,12 @@
 rasterizeROI(pnts, imgSize)
 }
 \arguments{
-\item{pnts}{a two column matrix of points as relative x and y values (0 to 1)}
+\item{pnts}{a numeric matrix. a two column matrix of points as relative x and y values (0 to 1)}
 
-\item{imgSize}{size of the final raster}
+\item{imgSize}{a numeric vector, size of the final raster}
+}
+\value{
+a binary matrix. matrix of the mask file.
 }
 \description{
 This function convert point-based polygons to raster format

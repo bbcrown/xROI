@@ -1,8 +1,9 @@
 #' Rasterize ROI Polygons
 #'
 #' This function convert point-based polygons to raster format
-#' @param pnts a two column matrix of points as relative x and y values (0 to 1)
-#' @param imgSize size of the final raster
+#' @param pnts a numeric matrix. a two column matrix of points as relative x and y values (0 to 1)
+#' @param imgSize a numeric vector, size of the final raster
+#' @return a binary matrix. matrix of the mask file.
 #' @keywords  Rasterize ROI Polygons
 #' @export
 #' @examples
@@ -24,14 +25,14 @@ rasterizeROI <- function(pnts, imgSize){
   # poly@polygons[[1]]@Polygons[[1]]@coords <- as.matrix(pnts)
 
   tbl <- as.data.table(na.omit(cbind(pnts,cumsum(is.na(pnts[,1]))+1 )))
-  colnames(tbl) <- c('x', 'y', 'g')
-  ng <- table(tbl$g)
+  colnames(tbl) <- c('x', 'y', 'z')
+  ng <- table(tbl$z)
 
   polyList <- list()
   np <- length(ng[which(ng>=3)])
 
   for(gi in 1:np)
-    polyList[[gi]] <- as.matrix(tbl[g==gi, .(x,y)])
+    polyList[[gi]] <- as.matrix(tbl[z==gi, .(x,y)])
 
   polys <- SpatialPolygons(
     lapply(1:np,

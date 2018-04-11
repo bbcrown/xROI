@@ -7,7 +7,10 @@
 parseROI(roifilepath)
 }
 \arguments{
-\item{roifilepath}{path to the ROI file}
+\item{roifilepath}{a character string. path to the ROI file}
+}
+\value{
+a list. ROI list file as a list.
 }
 \description{
 This function reads the ROI list file and returns it as a list variable

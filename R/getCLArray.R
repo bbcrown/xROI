@@ -1,7 +1,8 @@
 #' Center line arrary of an array of image
 #'
 #' This function returns CLI array for vector of JPEG files
-#' @param files path to the JPEF files
+#' @param files a vector of character strings, paths to the JPEF files
+#' @return A 3D array. The center line image as an array (NxHx3), where N is number of files, and H is the height of an image in pixels.
 #' @keywords  Center-line image CLI
 #' @export
 #' @import jpeg

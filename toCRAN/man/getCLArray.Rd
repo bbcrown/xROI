@@ -7,7 +7,10 @@
 getCLArray(files)
 }
 \arguments{
-\item{files}{path to the JPEF files}
+\item{files}{a vector of character strings, paths to the JPEF files}
+}
+\value{
+A 3D array. The center line image as an array (NxHx3), where N is number of files, and H is the height of an image in pixels.
 }
 \description{
 This function returns CLI array for vector of JPEG files

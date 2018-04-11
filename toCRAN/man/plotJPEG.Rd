@@ -7,13 +7,13 @@
 plotJPEG(path, add = FALSE, xlim = NULL, ylim = NULL)
 }
 \arguments{
-\item{path}{path to the JPEG file to be plotted.}
+\item{path}{a character string. path to the JPEG file to be plotted.}
 
-\item{add}{logical variable whether to add the image to an existing graphics.}
+\item{add}{logical. logical variable whether to add the image to the existing graphics.}
 
-\item{xlim}{x axis range}
+\item{xlim}{numeric vector of lenght 2, x axis range}
 
-\item{ylim}{y axis range}
+\item{ylim}{numeric vector of lenght 2, y axis range}
 }
 \value{
 This function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.

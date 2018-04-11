@@ -7,12 +7,15 @@
 Launch(inputDir = NULL, Interactive = FALSE)
 }
 \arguments{
-\item{inputDir}{path to the input directory as a character string.}
+\item{inputDir}{a character string.  path to the input directory.}
 
 \item{Interactive}{logical variable to force an interactive session}
 }
+\value{
+this should be run in an interactive R session
+}
 \description{
-This function launch the app by opening the default web browser.
+This function launches the app by opening the default web browser.
 }
 \examples{
 

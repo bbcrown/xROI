@@ -1,11 +1,11 @@
 #' Extract chromatic coefficients and their statistics for an array of JPEG files
 #'
-#' This function apply a list of mask matrices to a vector of jpeg images and extract statstical metrics for each chromatic coefficients on R, G and B.
-#' @param paths paths to the JPEG files
-#' @param rmskList rasters of mask as list
-#' @param mIndex A vector of integer numbers as the index of mask files, same length as paths. This vector shows which mask should be used with which JPEG file.
+#' This function apples a list of mask matrices to a vector of jpeg images and extract statstical metrics for each chromatic coordinate on R, G and B.
+#' @param paths a vector of character strings, paths to the JPEG files
+#' @param rmskList a list, rasters of mask as list
+#' @param mIndex a numeric vector, a vector of integer numbers as the index of mask files, same length as paths. This vector shows which mask should be used with which JPEG file.
 #' @return This function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
-#' @keywords  exract chromatic coefficients rcc gcc bcc
+#' @keywords  exract chromatic coordinates rcc gcc bcc
 #' @export
 #' @rawNamespace import(raster, except = quantile)
 #' @import rgdal
@@ -30,7 +30,7 @@ extractCCCTimeSeries <- function(rmskList, mIndex, paths){
   }
 
   n <- length(paths)
-  CCCT <- matrix(NA, nrow=n, ncol=24)
+  CCCT <- matrix(NA, nrow=n, ncol=30)
 
 
   # if(exists('session'))
@@ -43,7 +43,7 @@ extractCCCTimeSeries <- function(rmskList, mIndex, paths){
                                    cbind(m, m, m))
                  if(!is.null(tbl))
                    CCCT[i,] <- c(tbl$cc, tbl$std,
-                                 tbl$q2.5, tbl$q25, tbl$q50, tbl$q75, tbl$q975,
+                                 tbl$q5, tbl$q10, tbl$q25, tbl$q50, tbl$q75, tbl$q90, tbl$q95,
                                  # tbl$skewness, tbl$kurtosis,
                                  tbl$brightness[1], tbl$darkness[1], tbl$contrast[1])
                  incProgress(1/n)
@@ -55,11 +55,13 @@ extractCCCTimeSeries <- function(rmskList, mIndex, paths){
   colnames(CCCT) <- c('red','green','blue',
                       # 'r.mean','g.mean','b.mean',
                       'r.std','g.std','b.std',
-                      'r2.5', 'g2.5', 'b2.5',
+                      'r5', 'g5', 'b5',
+                      'r10', 'g10', 'b10',
                       'r25', 'g25', 'b25',
                       'r50', 'g50', 'b50',
                       'r75', 'g75', 'b75',
-                      'r975', 'g975', 'b975',
+                      'r90', 'g90', 'b90',
+                      'r95', 'g95', 'b95',
                       # 'r.skewness','g.skewness','b.skewness',
                       # 'r.kurtosis','g.kurtosis','b.kurtosis',
                       'brightness','darkness','contrast'

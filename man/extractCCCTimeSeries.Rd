@@ -7,21 +7,21 @@
 extractCCCTimeSeries(rmskList, mIndex, paths)
 }
 \arguments{
-\item{rmskList}{rasters of mask as list}
+\item{rmskList}{a list, rasters of mask as list}
 
-\item{mIndex}{A vector of integer numbers as the index of mask files, same length as paths. This vector shows which mask should be used with which JPEG file.}
+\item{mIndex}{a numeric vector, a vector of integer numbers as the index of mask files, same length as paths. This vector shows which mask should be used with which JPEG file.}
 
-\item{paths}{paths to the JPEG files}
+\item{paths}{a vector of character strings, paths to the JPEG files}
 }
 \value{
 This function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
 }
 \description{
-This function apply a list of mask matrices to a vector of jpeg images and extract statstical metrics for each chromatic coefficients on R, G and B.
+This function apples a list of mask matrices to a vector of jpeg images and extract statstical metrics for each chromatic coordinate on R, G and B.
 }
 \keyword{bcc}
 \keyword{chromatic}
-\keyword{coefficients}
+\keyword{coordinates}
 \keyword{exract}
 \keyword{gcc}
 \keyword{rcc}

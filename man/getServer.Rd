@@ -9,7 +9,10 @@ getServer(exdir, inputDir = NULL)
 \arguments{
 \item{exdir}{path to the example directory}
 
-\item{inputDir}{path to the input directory}
+\item{inputDir}{a character string. the path to the input directory}
+}
+\value{
+the shiny server object
 }
 \description{
 This funciton constructs the server functions of the shiny app.

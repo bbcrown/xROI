@@ -6,6 +6,9 @@
 \usage{
 gettmpdir()
 }
+\value{
+the path to the system temporary directory
+}
 \description{
 This function returns the path to the TEMP directory
 }

@@ -7,7 +7,10 @@
 getCL(file)
 }
 \arguments{
-\item{file}{path to the JPEF file}
+\item{file}{a character string, path to the JPEF file}
+}
+\value{
+a three-column matrix of red, green blue bands of the center line
 }
 \description{
 This function returns the R,G,B vectors extracted from the center-line of a JPEG file

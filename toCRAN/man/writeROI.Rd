@@ -7,9 +7,9 @@
 writeROI(ROIList, roifilepath)
 }
 \arguments{
-\item{ROIList}{ROI List variable to be written}
+\item{ROIList}{a list, ROI List variable to be written}
 
-\item{roifilepath}{path to the ROI file}
+\item{roifilepath}{a character string, path to the ROI file}
 }
 \description{
 This function writes the ROI list file on a disk space.

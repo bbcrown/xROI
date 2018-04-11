@@ -7,14 +7,14 @@
 addMask(mask, add = TRUE, col = "black")
 }
 \arguments{
-\item{mask}{binary or logical matrix, describing the mask (1 for selected pixels, 0 for not selected pixels)}
+\item{mask}{a binary or logical matrix, describing the mask (0:black for selected pixels, 1:white for not selected pixels)}
 
-\item{add}{whether to add the mask to and existing plot}
+\item{add}{a logical variable, whether to add the mask to an existing plot}
 
-\item{col}{color value of the plotted mask}
+\item{col}{a character string, color value of the plotted mask}
 }
 \description{
-This function plot or add a mask raster on the graphics.
+This function plots or adds a mask raster on the default graphics.
 }
 \examples{
 
@@ -25,7 +25,7 @@ str(m)
 #plot the mask in black color
 addMask(m, add = FALSE)
 
-#add the same mask in red color to the existing plot
+#add the same mask in the red color to the existing plot
 addMask(m, add = TRUE, col = 'red')
 
 }

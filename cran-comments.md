@@ -7,12 +7,8 @@ R CMD check results
 0 errors | 0 warnings | 0 notes
 
 R CMD check --as-cran
-Status: 1 NOTE
-
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Bijan Seyednasrollah <bijan.s.nasr@gmail.com>’
-
-New submission
+Status: 0 NOTE
 
 ## Dependencies
 This package extensively depends on the GDAL engine and rgdal, shiny and plotly R packages.
+Installing it from the GitHub repository may need manual installation of GDAL and other R packages.

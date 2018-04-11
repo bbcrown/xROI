@@ -1,7 +1,7 @@
 #' UI function
 #'
 #' This funciton constructs the user interface of the shiny app.
-#'
+#' @return the user intrface module of the shiny app.
 #' @keywords  UI Shiny App
 #' @export
 #' @import shiny
@@ -192,13 +192,15 @@ background-color: #808080;
       tabPanel('Time series extraction',
                fluidRow(
                  column(2,
-                        selectInput('ccInterval', label = 'Interval', choices = c(1:7, 10, 15, 20, 30), selected = 1, width = '50px'),
+                        selectInput('ccInterval', label = 'Temporal Interval', choices = c(1:7, 10, 15, 20, 30), selected = 1, width = '100%'),
                         actionButton("startExtractCC", "Extract", icon = icon('line-chart'), onclick="Shiny.onInputChange('stopThis',false)", width = "110px", style="background-color:#666; color:#fff;font-weight: bold;"),
+                        hr(),
+                        radioButtons('ccMode', label = NULL, choices = c('Markers', 'Lines+Markers')),
                         hr(),
                         checkboxGroupInput('ccBand', label = NULL, choices = c(Red='R', Green='G', Blue='B'),
                                            selected = c( 'G'), width = '100%', inline = F),
                         hr(),
-                        radioButtons('ccVar', label = 'Intervals', choices = c('None', '50%', '95%')),
+                        radioButtons('ccVar', label = 'Confidence Interval', choices = c('None', '50%', '80%', '90%')),
                         hr(),
                         downloadButton("downloadTSData", "Download\t")
                  ),
@@ -238,9 +240,7 @@ background-color: #808080;
                                   br(),
 
                                   plotOutput("cliClickPlot",  width =  '100%'),
-                                  br(),
-                                  br(),
-                                  strong(textOutput('hoverText'))
+                                  strong(textOutput('hoverText'), style="color:#FFFF00; border-color: #303030; background-color: #303030; font-weight: bold; font-size:18px")
                            ),
                            column(9,
                                   br(),
@@ -257,7 +257,7 @@ background-color: #808080;
                                     <h2>xROI: A General ROI Processor</h2>
                                     <p>In order to extract time series data from a series of images, one needs to : <br/>
                                     &nbsp; &nbsp; &nbsp; 1) delineate a region of interest (ROI); <br/>
-                                    &nbsp; &nbsp; &nbsp; 2) create a mask file identifying pixles of interest; and<br/>
+                                    &nbsp; &nbsp; &nbsp; 2) create a mask file identifying pixels of interest; and<br/>
                                     &nbsp; &nbsp; &nbsp; 3) calculate averaged values of particular bands (e.g. Green Chromatic Coordinate or GCC) over a time period.<br/> <br/>
                                     However, these steps are painstaking and need special accuracy. The xROI tool provides an interactive web interface to facilitate these process of large imagery datasets. This document is a simple guide to explain different elements of the xROI ROI and their functionality.</p>
                                     <br/>

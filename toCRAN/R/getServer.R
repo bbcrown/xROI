@@ -3,7 +3,8 @@
 #' This funciton constructs the server functions of the shiny app.
 #'
 #' @param exdir path to the example directory
-#' @param inputDir path to the input directory
+#' @param inputDir a character string. the path to the input directory
+#' @return the shiny server object
 #' @keywords  Server Shiny App
 #' @export
 #' @import shiny
@@ -69,7 +70,7 @@ getServer <- function(exdir, inputDir = NULL){
     })
 
     output$folderpath <- renderUI({
-      rv$folderpath
+      basename(rv$folderpath)
     })
 
     observeEvent(rv$folderpath,{
@@ -776,6 +777,7 @@ getServer <- function(exdir, inputDir = NULL){
           titlefont = fontList
         )
 
+        pointsMode <- tolower(input$ccMode)
 
         if(input$startExtractCC==0|is.null(isolate(curMask()))){
 
@@ -799,10 +801,11 @@ getServer <- function(exdir, inputDir = NULL){
           ccSel <- as.vector(sapply(input$ccBand, switch, R='red', G='green',  B='blue'))
           d <- d[band%in%ccSel]
 
+
           p <- plot_ly(data = d, x=~time, y= ~cc,
                        color = ~band,
                        colors = c('#FF4615','#007D00','#2364B7'),
-                       type = 'scatter', mode = 'lines+markers') %>%
+                       type = 'scatter', mode = pointsMode) %>%
             layout(xaxis = xAxis, yaxis = yAxis) %>%
             config(collaborate = FALSE)
           return(p)
@@ -820,9 +823,9 @@ getServer <- function(exdir, inputDir = NULL){
         # cc1 <- melt(cvals[,.(red, green, blue)],
         #             variable.name='band', value.name='cc', id.vars=NULL)
         #
-        cc2 <- rbind(cvals[,.(cc=red, q25=red-r25, q75=r75-red, q2.5=red-r2.5, q975=r975-red, band='red')],
-                     cvals[,.(cc=green, q25=green-g25, q75=g75-green, q2.5=green-g2.5, q975=g975-green, band='green')],
-                     cvals[,.(cc=blue, q25=blue-b25, q75=b75-blue, q2.5=blue-b2.5, q975=b975-blue, band='blue')])
+        cc2 <- rbind(cvals[,.(cc=red, q25=red-r25, q75=r75-red, q5=red-r5, q95=r95-red, q10=red-r10, q90=r90-red, band='red')],
+                     cvals[,.(cc=green, q25=green-g25, q75=g75-green, q5=green-g5, q95=g95-green, q10=green-g10, q90=g90-green, band='green')],
+                     cvals[,.(cc=blue, q25=blue-b25, q75=b75-blue, q5=blue-b5, q95=b95-blue, q10=blue-b10, q90=b90-blue, band='blue')])
 
         cc2[,band:=factor(band, levels=c('red','green','blue'))]
 
@@ -837,7 +840,7 @@ getServer <- function(exdir, inputDir = NULL){
         p0 <- plot_ly(data = dd, x=~time, y= ~cc,
                       color = ~band,
                       colors = c('#FF4615','#007D00','#2364B7'),
-                      type = 'scatter', mode = 'lines+markers')
+                      type = 'scatter', mode = pointsMode)
 
         p50 <- plot_ly(data = dd, x=~time, y= ~cc,
                        error_y = list(
@@ -848,20 +851,31 @@ getServer <- function(exdir, inputDir = NULL){
                          color=~band),
                        color = ~band,
                        colors = c('#FF4615','#007D00','#2364B7'),
-                       type = 'scatter', mode = 'lines+markers')
+                       type = 'scatter', mode = pointsMode)
 
-        p95 <- plot_ly(data = dd, x=~time, y= ~cc,
+        p80 <- plot_ly(data = dd, x=~time, y= ~cc,
                        error_y = list(
                          type = "data",
                          symmetric = FALSE,
-                         array = ~q975,
-                         arrayminus = ~q2.5,
+                         array = ~q90,
+                         arrayminus = ~q10,
                          color=~band),
                        color = ~band,
                        colors = c('#FF4615','#007D00','#2364B7'),
-                       type = 'scatter', mode = 'lines+markers')
+                       type = 'scatter', mode = pointsMode)
 
-        p <- switch(input$ccVar, 'None'=p0, '50%'=p50, '95%'=p95)
+        p90 <- plot_ly(data = dd, x=~time, y= ~cc,
+                       error_y = list(
+                         type = "data",
+                         symmetric = FALSE,
+                         array = ~q95,
+                         arrayminus = ~q5,
+                         color=~band),
+                       color = ~band,
+                       colors = c('#FF4615','#007D00','#2364B7'),
+                       type = 'scatter', mode = pointsMode)
+
+        p <- switch(input$ccVar, 'None'=p0, '50%'=p50, '80%'=p80, '90%'=p90)
 
         hide_legend(p  %>%
                       layout(xaxis = xAxis, yaxis = yAxis
@@ -883,10 +897,10 @@ getServer <- function(exdir, inputDir = NULL){
         cvals <- ccVals()
         # tvals <- paths()[,.(Year, DOY)]
         tvals <- ccTime()
-
+        fvals <- ccImgList()
         # cc <- data.frame(red= cvals$rcc, green = cvals$gcc, blue= cvals$bcc)
-        cc <- as.data.frame(cvals)
-        d <- data.table(tvals, cc)
+        cc <- as.data.frame(round(cvals, digits = 5))
+        d <- data.table(file = fvals, time = tvals, cc)
         write.table(d, file, sep = ',', row.names = F)
       }
     )
@@ -997,7 +1011,7 @@ getServer <- function(exdir, inputDir = NULL){
         axis(1, at = DT$Date, labels = as.character(DT$Label), font=2, cex=1.2)
         par(new=T)
         plotCLArray(cliProcessed())
-        if(!is.null(rv$cliclickID)) abline(v=rv$cliclickID-0.5, col='red', lwd = 3)
+        if(!is.null(rv$cliclickID)) abline(v=rv$cliclickID-0.5, col='red', lwd = 5)
       }
     )
 
@@ -1029,7 +1043,7 @@ getServer <- function(exdir, inputDir = NULL){
     output$hoverText <- renderText({
       if(is.null(rv$cli)|is.null(input$cliHover)) return()
       ID <- ceiling(input$cliHover$x)
-      paste0('Image # ', ID ,' = ',imgT()[ID])
+      paste0('Image # ', ID ,' : ',imgT()[ID])
     })
 
 

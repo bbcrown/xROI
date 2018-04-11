@@ -1,5 +1,8 @@
-globalVariables(names = c('Year','Month', 'Day', 'HHMMSS', 'x', 'y','.',
-'DOY', 'Date', 'DateTime', 'Hour', 'ID', 'Label', 'Minute', 'Second', 'V1', 'YearDOY', 'archive', 'b2.5',
-'b25', 'b75', 'b975', 'band', 'blackness', 'blue', 'conT', 'dukehw', 'empty', 'filenames', 'g', 'g2.5',
-'g25', 'g75', 'g975', 'green', 'mainDataPath', 'middayListPath', 'newpath', 'path', 'r2.5', 'r25',
-'r75', 'r975', 'red'))
+globalVariables(names = c('Year','Month', 'Day', 'Hour', 'Minute', 'Second',
+                          'HHMMSS','DOY', 'Date', 'DateTime', 'YearDOY',
+                          'ID', 'Label', 'x', 'y', 'z', '.', 'archive',
+                          'mainDataPath', 'middayListPath', 'newpath', 'path', 'filenames',
+                          'band', 'blackness',  'conT', 'dukehw', 'empty',
+                          'b5', 'b10', 'b25', 'b75', 'b90', 'b95', 'blue',
+                          'g5', 'g10', 'g25', 'g75', 'g90', 'g95', 'green',
+                          'r5', 'r10', 'r25', 'r75', 'r90', 'r95', 'red'))

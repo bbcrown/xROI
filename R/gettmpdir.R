@@ -1,7 +1,7 @@
 #' Path to the TEMP directory
 #'
 #' This function returns the path to the TEMP directory
-#'
+#' @return the path to the system temporary directory
 #' @keywords  temporary directory
 #' @export
 #' @examples

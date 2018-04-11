@@ -1,9 +1,9 @@
 #' Plot or add a mask
 #'
-#' This function plot or add a mask raster on the graphics.
-#' @param mask binary or logical matrix, describing the mask (1 for selected pixels, 0 for not selected pixels)
-#' @param add whether to add the mask to and existing plot
-#' @param col color value of the plotted mask
+#' This function plots or adds a mask raster on the default graphics.
+#' @param mask a binary or logical matrix, describing the mask (0:black for selected pixels, 1:white for not selected pixels)
+#' @param add a logical variable, whether to add the mask to an existing plot
+#' @param col a character string, color value of the plotted mask
 #' @keywords  plot mask raster
 #' @export
 #' @rawNamespace import(raster, except = quantile)
@@ -20,7 +20,7 @@
 #' #plot the mask in black color
 #' addMask(m, add = FALSE)
 #'
-#' #add the same mask in red color to the existing plot
+#' #add the same mask in the red color to the existing plot
 #' addMask(m, add = TRUE, col = 'red')
 #'
 addMask <- function(mask, add = TRUE, col='black'){

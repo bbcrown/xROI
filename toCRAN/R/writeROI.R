@@ -1,8 +1,8 @@
 #' Write ROI list file
 #'
 #' This function writes the ROI list file on a disk space.
-#' @param ROIList ROI List variable to be written
-#' @param roifilepath path to the ROI file
+#' @param ROIList a list, ROI List variable to be written
+#' @param roifilepath a character string, path to the ROI file
 #' @keywords  Write ROI ROIList
 #' @export
 #' @examples

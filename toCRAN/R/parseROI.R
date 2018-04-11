@@ -1,7 +1,8 @@
 #' Parse ROI list file
 #'
 #' This function reads the ROI list file and returns it as a list variable
-#' @param roifilepath path to the ROI file
+#' @param roifilepath a character string. path to the ROI file
+#' @return a list. ROI list file as a list.
 #' @keywords  ROI ROIList
 #' @export
 #' @examples

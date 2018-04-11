@@ -1,9 +1,10 @@
 #' Interactive drawing of a polygon
 #'
-#' This function provides an interactive tool for drawing of polygons by user clicks on the plot
-#' @param col color value of the polygon polygon
-#' @param lty lty variable as line type
-#' @param ... passing graphical parameters tp
+#' This function provides an interactive tool for drawing of polygons by user clicks on the plotted graphics
+#' @param col a character string, color value of the polygon polygon
+#' @param lty a numeric value, lty variable as line type
+#' @param ... passing graphical arguments
+#' @return the coodinates of the clicked points
 #' @keywords  plot polygon interactive
 #' @export
 #' @importFrom graphics abline axis locator mtext par polygon rasterImage rect
@@ -14,7 +15,6 @@
 #'    drawPolygon()
 #' }
 #'
-#
 drawPolygon <- function (col = "#80303080", lty = 1, ...)
   {
     xy <- locator(2)

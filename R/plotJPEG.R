@@ -2,10 +2,10 @@
 #'
 #' This funciton plots a jpeg image as a raster given image path.
 #'
-#' @param path path to the JPEG file to be plotted.
-#' @param add logical variable whether to add the image to an existing graphics.
-#' @param xlim x axis range
-#' @param ylim y axis range
+#' @param path a character string. path to the JPEG file to be plotted.
+#' @param add logical. logical variable whether to add the image to the existing graphics.
+#' @param xlim numeric vector of lenght 2, x axis range
+#' @param ylim numeric vector of lenght 2, y axis range
 #' @return This function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
 #' @keywords  exract chromatic coefficients rcc gcc bcc
 #' @import jpeg

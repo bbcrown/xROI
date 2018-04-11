@@ -7,15 +7,15 @@
 extractCCC(path, m)
 }
 \arguments{
-\item{path}{path to the JPEG file}
+\item{path}{a character string, path to the JPEG file}
 
-\item{m}{mask binary matrix (1 for selected)}
+\item{m}{a binary mask, mask binary matrix (0 for included, 1 for not)}
 }
 \value{
-The function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
+The function returns statistical metrics for each color channel. It returns NULL, if dimensions do not agree.
 }
 \description{
-This function apply a mask matrix to a jpeg image and extract statstical metrics for each chromatic coefficients on R, G and B.
+This function applies a mask matrix to a jpeg image and extract statstical metrics for each chromatic coordinate on R, G and B.
 }
 \examples{
 
@@ -25,7 +25,7 @@ cc <- extractCCC(jpgFile, m)
 }
 \keyword{bcc}
 \keyword{chromatic}
-\keyword{coefficients}
+\keyword{coordinates}
 \keyword{exract}
 \keyword{gcc}
 \keyword{rcc}

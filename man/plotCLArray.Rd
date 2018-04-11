@@ -7,9 +7,12 @@
 plotCLArray(clArray, bands = 1:3)
 }
 \arguments{
-\item{clArray}{A 3D array of CLI (HxWx3)}
+\item{clArray}{a numeric array. A 3D array of CLI (HxWx3)}
 
-\item{bands}{integer vector of length 3, showing bands to be plotted}
+\item{bands}{an integer vector. integer vector of length 3, showing bands to be plotted}
+}
+\value{
+invisibly returns the dimension of the plotted image
 }
 \description{
 This function plots a CLI array on the graphics.

@@ -1,10 +1,10 @@
 #' Extract chromatic coefficients and their statistics
 #'
-#' This function apply a mask matrix to a jpeg image and extract statstical metrics for each chromatic coefficients on R, G and B.
-#' @param path path to the JPEG file
-#' @param m mask binary matrix (1 for selected)
-#' @return The function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
-#' @keywords  exract chromatic coefficients rcc gcc bcc
+#' This function applies a mask matrix to a jpeg image and extract statstical metrics for each chromatic coordinate on R, G and B.
+#' @param path a character string, path to the JPEG file
+#' @param m a binary mask, mask binary matrix (0 for included, 1 for not)
+#' @return The function returns statistical metrics for each color channel. It returns NULL, if dimensions do not agree.
+#' @keywords  exract chromatic coordinates rcc gcc bcc
 #' @export
 #' @rawNamespace import(raster, except = quantile)
 #' @import rgdal
@@ -36,9 +36,9 @@ extractCCC <- function(path, m){
   cc <- colMeans(ccMat)
   cc <- cc/sum(cc)
 
-  tbl <- as.data.frame(t(apply(ccMat, 2, quantile, probs = c(0, 0.025, 0.25, 0.5, 0.75, 0.975, 1))))
+  tbl <- as.data.frame(t(apply(ccMat, 2, quantile, probs = c(0, 0.05, 0.10, 0.25, 0.5, 0.75, 0.90, 0.95, 1))))
   rownames(tbl) <- c('r','g','b')
-  colnames(tbl) <- c('min','q2.5','q25','q50','q75','q975','max')
+  colnames(tbl) <- c('min','q5', 'q10','q25','q50','q75', 'q90','q95','max')
 
   tbl$cc <- cc
   # tbl$mean <- colMeans(ccMat)

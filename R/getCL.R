@@ -1,7 +1,8 @@
 #' Center line column of an image
 #'
 #' This function returns the R,G,B vectors extracted from the center-line of a JPEG file
-#' @param file path to the JPEF file
+#' @param file a character string, path to the JPEF file
+#' @return a three-column matrix of red, green blue bands of the center line
 #' @keywords  Center-line image CLI
 #' @export
 #' @import jpeg
