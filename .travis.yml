@@ -9,12 +9,10 @@ addons:
       - libproj-dev
       - python-gdal
 
-r_binary_packages:
-  - rgdal
-
 # Code coverage
 r_packages:
   - covr
+  - rgdal
 
 ## For a CRAN package
 #  - ./travis-tool.sh install_r <package>
