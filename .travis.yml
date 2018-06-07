@@ -17,6 +17,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install libgdal1-dev libproj-dev
   - sudo apt-get install python-gdal
+  - sudo apt-get install gdal
 
 r_binary_packages:
   - rgdal
