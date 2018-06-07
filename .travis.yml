@@ -1,5 +1,12 @@
 language: r
-sudo: required
+sudo: false
+cache: packages
+addons:
+  apt:
+    packages:
+      - libgdal-dev
+      - libproj-dev
+
 warnings_are_errors: false
 
 # blacklist
@@ -13,6 +20,7 @@ warnings_are_errors: false
 #    - release
 
 before_install:
+  - sudo add-apt-repository ppa:marutter/rrutter -y
   - sudo apt-get update
   - sudo apt-get install python-gdal
 
