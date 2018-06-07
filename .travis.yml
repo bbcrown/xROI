@@ -12,7 +12,9 @@ addons:
 # Code coverage
 r_packages:
   - covr
-  - rgdal
+
+before_script:
+  - R -e "install.packages('rgdal', type = 'source')"
 
 ## For a CRAN package
 #  - ./travis-tool.sh install_r <package>
