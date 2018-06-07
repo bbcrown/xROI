@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 xROI.Rcheck
+inst/doc
