@@ -17,7 +17,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install libgdal1-dev libproj-dev
   - sudo apt-get install python-gdal
-  - sudo apt-get install gdal
 
 r_binary_packages:
   - rgdal
@@ -25,6 +24,9 @@ r_binary_packages:
 # Code coverage
 r_packages:
   - covr
+
+virtualenv:
+  system_site_packages: true
 
 ## For a CRAN package
 #  - ./travis-tool.sh install_r <package>
