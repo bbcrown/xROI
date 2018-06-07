@@ -6,7 +6,7 @@ addons:
   apt:
     packages:
       - libgdal1h
-      - libgdal1h-dev
+      - libgdal1-dev
       - libproj-dev
       - python-gdal
 
