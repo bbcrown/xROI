@@ -5,8 +5,8 @@ cache: packages
 addons:
   apt:
     packages:
-      - libgdal1
-      - libgdal1-dev
+      - libgdal1h
+      - libgdal1h-dev
       - libproj-dev
       - python-gdal
 
