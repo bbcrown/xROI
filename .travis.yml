@@ -16,6 +16,9 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install python-gdal
 
+r_binary_packages:
+  - rgdal
+
 # Code coverage
 r_packages:
   - covr
