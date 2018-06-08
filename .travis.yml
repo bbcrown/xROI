@@ -13,6 +13,7 @@ addon:
 r_packages:
   - covr
 
+
 r_binary_packages:
   - rgdal
 
