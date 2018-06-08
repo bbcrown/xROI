@@ -11,9 +11,10 @@ addon:
 # Code coverage
 r_packages:
   - covr
+  - rgdal
 
 before_script:
-  - Rscript -e "install.packages('rgdal', type = 'source')"
+  - sudo apt-get install -y gdal-bin
 
 after_success:
 - Rscript -e 'library(covr); codecov()'
