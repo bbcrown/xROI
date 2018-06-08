@@ -1,21 +1,28 @@
 language: r
-dist: trusty
 sudo: required
-cache: packages
-addons:
-  apt:
-    packages:
-      - libgdal1h
-      - libgdal1-dev
-      - libproj-dev
-      - python-gdal
+warnings_are_errors: false
+
+# blacklist
+# branches:
+#  except:
+#    - master
+
+# whitelist
+# branches:
+#  only:
+#    - release
+
+before_install:
+  - sudo add-apt-repository ppa:marutter/rrutter -y
+  - sudo apt-get update
+  - sudo apt-get install python-gdal
+
+r_binary_packages:
+  - rgdal
 
 # Code coverage
 r_packages:
   - covr
-
-before_script:
-  - R -e "install.packages('rgdal', type = 'source')"
 
 ## For a CRAN package
 #  - ./travis-tool.sh install_r <package>
