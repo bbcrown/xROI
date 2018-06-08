@@ -1,4 +1,5 @@
 language: r
+distro: trusty
 sudo: required
 warnings_are_errors: false
 
