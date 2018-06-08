@@ -11,7 +11,6 @@ addon:
 # Code coverage
 r_packages:
   - covr
-  - rgdal
 
 before_script:
   - brew install --with-postgresql gdal
