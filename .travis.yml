@@ -14,7 +14,8 @@ r_packages:
   - rgdal
 
 before_script:
-  - sudo apt-get install -y gdal-bin
+  - brew install --with-postgresql gdal
+  - install.packages('rgdal', type = "source", configure.args=c('--with-proj-include=/usr/local/include','--with-proj-lib=/usr/local/lib'))
 
 after_success:
 - Rscript -e 'library(covr); codecov()'
