@@ -66,6 +66,7 @@ getServer <- function(exdir, inputDir = NULL){
 
     observe({
       if(is.null(input$folderpath)) return()
+      if(input$folderpath==0) return()
       rv$folderpath <- parseDirPath(roots, selection = input$folderpath)
     })
 
