@@ -66,7 +66,6 @@ getServer <- function(exdir, inputDir = NULL){
 
     observe({
       if(is.null(input$folderpath)) return()
-      if(input$folderpath==0) return()
       rv$folderpath <- parseDirPath(roots, selection = input$folderpath)
     })
 
@@ -580,7 +579,6 @@ getServer <- function(exdir, inputDir = NULL){
     # ----------------------------------------------------------------------
     observeEvent(input$roiName,{
       if(input$roiName=='') return()
-      if(is.null(rv$filetb)) return()
       rv$slideShow <- 0
       if(input$roiName=='New ROI') {
         shinyjs::enable('vegType')
