@@ -579,6 +579,7 @@ getServer <- function(exdir, inputDir = NULL){
     # ----------------------------------------------------------------------
     observeEvent(input$roiName,{
       if(input$roiName=='') return()
+      if(is.null(rv$filetb)) return()
       rv$slideShow <- 0
       if(input$roiName=='New ROI') {
         shinyjs::enable('vegType')
