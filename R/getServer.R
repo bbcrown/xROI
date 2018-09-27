@@ -54,7 +54,17 @@ getServer <- function(exdir, inputDir = NULL){
                          cli = NULL,
                          cliclickID = NULL)
 
+    
     roots = list('Example'= exdir, Home='~', root='/')
+    if(Sys.info()['sysname']=='Windows'){
+      volumes <- system("wmic logicaldisk get name", intern = T)
+      volumes <- sub(" *\\r$", "", volumes)
+      keep <- !tolower(volumes) %in% c("name", "")
+      volumes <- volumes[keep]
+      names(volumes) <- volumes
+      roots <- c('Example'= exdir, Home=path.expand('~/../'), volumes)
+    }
+    
     observe({
       if(!is.null(inputDir)) rv$folderpath <- inputDir
     })
