@@ -8,17 +8,18 @@
 #' @importFrom data.table data.table as.data.table
 #' @importFrom lubridate date yday
 #'
-parsePhenocamFilenames <- function(filenames)
+parsePhenocamFilenames <- function(filepaths)
 {
-  filenames <- gsub('.jpg', '', basename(filenames))
+  filenames <- gsub('.jpg', '', basename(filepaths))
   werr <- grepl('.err', filenames, fixed = TRUE)
-  filenames <- filenames[!werr]
 
   lsplit <- lapply(filenames, function(x){strsplit(x, split = '_')[[1]]})
   len <- lapply(lsplit, length)
 
-  imgDT <- cbind(filenames[len==5], matrix(unlist(lsplit[len==5]), ncol = 5, byrow = TRUE))
-  colnames(imgDT) <- c('filenames', 'Site', 'Year', 'Month','Day','HHMMSS')
+  wfilter <- (!werr)&(len==5)
+
+  imgDT <- cbind(filepaths[wfilter],filenames[wfilter], matrix(unlist(lsplit[wfilter]), ncol = 5, byrow = TRUE))
+  colnames(imgDT) <- c('filepaths', 'filenames', 'Site', 'Year', 'Month','Day','HHMMSS')
   imgDT <- data.table(imgDT)
 
   imgDT[,Year:=as.numeric(Year)]
