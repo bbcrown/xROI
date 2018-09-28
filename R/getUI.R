@@ -66,6 +66,7 @@ background-color: #808080;
                             #                      "text/comma-separated-values,text/plain",
                             #                      ".csv")),
 
+                            radioButtons(inputId = 'fileload', label = 'File load', choices = c('Phenocam format'='phenocam', 'From filelist.csv'='filelist')),
                             fluidRow(
                               column(4, shinyDirButton('folderpath', label='Images directory',
                                                        title='Select the directory of images')),
