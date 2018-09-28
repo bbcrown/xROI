@@ -12,10 +12,6 @@ the user intrface module of the shiny app.
 \description{
 This funciton constructs the user interface of the shiny app.
 }
-\examples{
-ui <- getUI()
-
-}
 \keyword{App}
 \keyword{Shiny}
 \keyword{UI}

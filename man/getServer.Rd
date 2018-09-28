@@ -17,11 +17,6 @@ the shiny server object
 \description{
 This funciton constructs the server functions of the shiny app.
 }
-\examples{
-exampleDir <- system.file('example', package = "xROI")
-server <- getServer(exampleDir)
-
-}
 \keyword{App}
 \keyword{Server}
 \keyword{Shiny}
