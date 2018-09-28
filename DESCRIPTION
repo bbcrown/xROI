@@ -32,7 +32,7 @@ Imports:
     utils,
     graphics,
     stats
-License: MIT + file LICENSE
+License: AGPL-3
 Encoding: UTF-8
 LazyData: true
 BugReports: https://github.com/bnasr/xROI/issues
