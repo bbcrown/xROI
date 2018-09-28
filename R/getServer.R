@@ -34,9 +34,6 @@
 #' @importFrom stats approx na.omit sd quantile
 #' @importFrom utils data download.file read.csv read.table setTxtProgressBar txtProgressBar unzip write.table zip
 #'
-#' @examples
-#' exampleDir <- system.file('example', package = "xROI")
-#' server <- getServer(exampleDir)
 #'
 getServer <- function(exdir, inputDir = NULL){
   return(function(input, output, session) {

@@ -31,8 +31,6 @@
 #' @importFrom stats approx na.omit sd quantile
 #' @importFrom utils data download.file read.csv read.table setTxtProgressBar txtProgressBar unzip write.table zip
 #'
-#' @examples
-#' ui <- getUI()
 #'
 getUI <- function(){
   return(fluidPage(
