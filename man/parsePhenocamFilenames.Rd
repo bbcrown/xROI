@@ -7,7 +7,7 @@
 parsePhenocamFilenames(filepaths)
 }
 \arguments{
-\item{filenames}{a character vector of filenames}
+\item{filepaths}{a character vector of filenames}
 }
 \value{
 a datatable containing filenames, with site name, date and timing

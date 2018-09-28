@@ -1,7 +1,7 @@
 #' Parse Phenocam filenames
 #'
 #' This function parse filename to extract sitename, date and timing of the images based on the phenocam naming convention.
-#' @param filenames a character vector of filenames
+#' @param filepaths a character vector of filenames
 #' @return a datatable containing filenames, with site name, date and timing
 #' @keywords  Parse Filename
 #' @export
@@ -15,7 +15,7 @@ parsePhenocamFilenames <- function(filepaths)
 
   lsplit <- lapply(filenames, function(x){strsplit(x, split = '_')[[1]]})
   len <- lapply(lsplit, length)
-  wIR <- (grepl('_IR_', files))
+  wIR <- (grepl('_IR_', filenames))
 
   wfilter <- (!werr)&(len==5)&(!wIR)
 
