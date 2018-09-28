@@ -4,7 +4,7 @@
 \alias{parsePhenocamFilenames}
 \title{Parse Phenocam filenames}
 \usage{
-parsePhenocamFilenames(filenames)
+parsePhenocamFilenames(filepaths)
 }
 \arguments{
 \item{filenames}{a character vector of filenames}

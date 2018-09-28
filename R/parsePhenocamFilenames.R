@@ -15,8 +15,9 @@ parsePhenocamFilenames <- function(filepaths)
 
   lsplit <- lapply(filenames, function(x){strsplit(x, split = '_')[[1]]})
   len <- lapply(lsplit, length)
+  wIR <- (grepl('_IR_', files))
 
-  wfilter <- (!werr)&(len==5)
+  wfilter <- (!werr)&(len==5)&(!wIR)
 
   imgDT <- cbind(filepaths[wfilter],filenames[wfilter], matrix(unlist(lsplit[wfilter]), ncol = 5, byrow = TRUE))
   colnames(imgDT) <- c('filepaths', 'filenames', 'Site', 'Year', 'Month','Day','HHMMSS')
