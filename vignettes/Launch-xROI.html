@@ -12,7 +12,7 @@
 
 <meta name="author" content="Bijan Seyednasrollah" />
 
-<meta name="date" content="2018-09-27" />
+<meta name="date" content="2018-10-19" />
 
 <title>Launch xROI</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Launch xROI</h1>
 <h4 class="author"><em>Bijan Seyednasrollah</em></h4>
-<h4 class="date"><em>2018-09-27</em></h4>
+<h4 class="date"><em>2018-10-19</em></h4>
 
 
 
@@ -83,9 +83,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="installation" class="section level3">
 <h3>Installation</h3>
 <p>The xROI R package has been published on The Comprehensive R Archive Network (CRAN). The latest tested xROI package can be installed from the <a href="https://cran.r-project.org/package=xROI">CRAN packages repository</a> by running the following command in an R environment:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">utils<span class="op">::</span><span class="kw">install.packages</span>(<span class="st">'xROI'</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">utils<span class="op">::</span><span class="kw">install.packages</span>(<span class="st">'xROI'</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.us.r-project.org&quot;</span> )</code></pre></div>
 <p>Alternatively, the latest beta release of xROI can be directly downloaded and installed from the GitHub repository:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;bnasr/xROI&quot;</span>). </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;bnasr/xROI&quot;</span>)</code></pre></div>
 <p>xROI depends on many R packages including: raster, rgdal, sp, jpeg, tiff, shiny, shinyjs, shinyBS, shinyAce, shinyTime, shinyFiles, shinydashboard, shinythemes, colourpicker, rjson, stringr, data.table, lubridate, plotly, moments, and RCurl. All the required libraries and packages will be automatically installed with installation of xROI. The package offers a fully interactive high-level interface as well as a set of low-level functions for ROI processing.</p>
 </div>
 <div id="launch" class="section level3">

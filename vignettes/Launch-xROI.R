@@ -1,11 +1,11 @@
 ## ---- echo=TRUE, eval=FALSE----------------------------------------------
 #  
-#  utils::install.packages('xROI')
+#  utils::install.packages('xROI', repos = "http://cran.us.r-project.org" )
 #  
 
 ## ---- echo=TRUE, eval=FALSE----------------------------------------------
 #  
-#  devtools::install_github("bnasr/xROI").
+#  devtools::install_github("bnasr/xROI")
 #  
 
 ## ---- echo=TRUE, eval=FALSE----------------------------------------------

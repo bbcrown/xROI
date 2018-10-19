@@ -22,14 +22,14 @@ R language and Shiny package were used as the main development tool for xROI, wh
 The xROI R package has been published on The Comprehensive R Archive Network (CRAN). The latest tested xROI package can be installed from the [CRAN packages repository](https://cran.r-project.org/package=xROI) by running the following command in an R environment:
 ```{r, echo=TRUE, eval=FALSE}
 
-utils::install.packages('xROI')
+utils::install.packages('xROI', repos = "http://cran.us.r-project.org" )
 
 ```
 
 Alternatively, the latest beta release of xROI can be directly downloaded and installed from the GitHub repository:
 ```{r, echo=TRUE, eval=FALSE}
 
-devtools::install_github("bnasr/xROI"). 
+devtools::install_github("bnasr/xROI")
 
 ```
 
