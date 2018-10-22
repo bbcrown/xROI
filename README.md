@@ -16,29 +16,10 @@ The xROI R package has been published on The Comprehensive R Archive Network (CR
 utils::install.packages('xROI', repos = "http://cran.us.r-project.org")
 ```
 
-```
-## Installing package into '/usr/local/lib/R/site-library'
-## (as 'lib' is unspecified)
-```
-
 Alternatively, the latest beta release of xROI can be directly downloaded and installed from the GitHub repository:
 
 ```r
 devtools::install_github("bnasr/xROI")
-```
-
-```
-## Downloading GitHub repo bnasr/xROI@master
-## from URL https://api.github.com/repos/bnasr/xROI/zipball/master
-```
-
-```
-## Warning in eapply(ns_env(pkg), force, all.names = TRUE): internal error -2
-## in R_decompress1
-```
-
-```
-## Installation failed: lazy-load database '/usr/local/lib/R/site-library/xROI/R/xROI.rdb' is corrupt
 ```
 
 xROI depends on many R packages including: raster, rgdal, sp, jpeg, tiff, shiny, shinyjs, shinyBS, shinyAce, shinyTime, shinyFiles, shinydashboard, shinythemes, colourpicker, rjson, stringr, data.table, lubridate, plotly, moments, and RCurl. All the required libraries and packages will be automatically installed with installation of xROI. The package offers a fully interactive high-level interface as well as a set of low-level functions for ROI processing. 
@@ -52,17 +33,8 @@ library(xROI)
 Launch()
 ```
 
-```
-## Warning: internal error -3 in R_decompress1
-```
-
-```
-## Error in eval(expr, envir, enclos): lazy-load database '/usr/local/lib/R/site-library/xROI/R/xROI.rdb' is corrupt
-```
-
 or form the command line (e.g. shell in Linux, Terminal in macOS and Command Prompt in Windows machines) where an R engine is already installed by:
-
-```shell
+```
 
 Rscript -e “xROI::Launch(Interactive = TRUE)”
 
