@@ -10,7 +10,7 @@
 #'
 parsePhenocamFilenames <- function(filepaths)
 {
-  filenames <- gsub('.jpg', '', basename(filepaths))
+  filenames <- gsub('.jpg|.JPG', '', basename(filepaths))
   werr <- grepl('.err', filenames, fixed = TRUE)
 
   lsplit <- lapply(filenames, function(x){strsplit(x, split = '_')[[1]]})
