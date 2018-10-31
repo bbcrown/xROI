@@ -85,7 +85,7 @@ getServer <- function(exdir, inputDir = NULL){
       # observeEvent(rv$folderpath,{
         dummy <- 0
       dir.create(roipath())
-      rv$imgs <- dir(rv$folderpath, pattern = '*.jpg', full.names = T)
+      rv$imgs <- dir(rv$folderpath, pattern = '*.jpg', full.names = T, ignore.case = TRUE)
 
       if(input$fileload=='phenocam'){
         tmp <- try(parsePhenocamFilenames(basename(rv$imgs)))
