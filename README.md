@@ -18,7 +18,7 @@ R language and Shiny package were used as the main development tool for xROI, wh
 
 
 ### Installation
-The xROI R package has been published on The Comprehensive R Archive Network (CRAN). The latest tested xROI package can be installed from the [CRAN packages repository](https://cran.r-project.org/web/packages/xROI) by running the following command in an R environment:
+The xROI R package has been published on The Comprehensive R Archive Network (CRAN). The latest tested xROI package can be installed from the [CRAN packages repository](https://cran.r-project.org/package=xROI) by running the following command in an R environment:
 
 ```r
 utils::install.packages('xROI', repos = "http://cran.us.r-project.org")
@@ -34,7 +34,7 @@ xROI depends on many R packages including: raster, rgdal, sp, jpeg, tiff, shiny,
 
 ### Launch
 
-A comprehensive user manual for low-level image processing using xROI is available from [xROI.pdf](https://cran.r-project.org/web/packages/xROI/xROI.pdf). While the user manual includes a set of examples for each function; here we explain the graphical interactive mode. The interactive mode can be launched from an interactive R environment by:
+A comprehensive user manual for low-level image processing using xROI is available from [xROI.pdf](https://cran.r-project.org/package=xROI/xROI.pdf). While the user manual includes a set of examples for each function; here we explain the graphical interactive mode. The interactive mode can be launched from an interactive R environment by:
 
 ```r
 library(xROI)
