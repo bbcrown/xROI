@@ -33,6 +33,7 @@ addMask <- function(mask, add = TRUE, col='black'){
   plot(rmask,legend=F, add=add, col=col)
   file.remove('tmp.tif')
   setwd(wd)
+  return(0)
 }
 
 

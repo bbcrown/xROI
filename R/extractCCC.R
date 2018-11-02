@@ -20,7 +20,6 @@
 #
 # extract chromatic colors of RGB channels for given jpeg file and mask matrix
 extractCCC <- function(path, m){
-  path
   jp <- readJPEG(path)
   dm <- dim(jp)
   rgb <- jp

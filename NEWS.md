@@ -1,3 +1,5 @@
+## 11-02-2018: New realese: bugs fixed, vignettes added, general code cleanup performed.
+
 ## 04-10-2018: UI is imporved. Manuals are rechecked.
 
 ## 03-31-2018: Forced interactive launch function is now added. Minor errors are fixed.

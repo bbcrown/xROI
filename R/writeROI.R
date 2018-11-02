@@ -63,6 +63,7 @@ writeROI <- function(ROIList, roifilepath){
   }
   allText <- paste0(hdrText, bdyText)
   writeLines(allText, paste0(roipath, roifilename))
+  return(0)
 }
 
 
