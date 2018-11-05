@@ -3,7 +3,7 @@ r:
   - oldrel
   - release
   - devel
-sudo: false
+sudo: true
 
 addon:
   packages:
@@ -16,5 +16,4 @@ r_packages:
   - rgdal
 
 after_success:
-  - Rscript -e 'library(covr); codecov()'
-
+- Rscript -e 'library(covr); codecov()'
