@@ -10,8 +10,7 @@
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/xROI?color=brightgreen)](http://www.r-pkg.org/pkg/xROI) 
 
 
-# xROI:  
-## Delineate Region of Interests (ROI's) and Extract Time-Series Data from Digital Repeat Photography Images
+# xROI: Delineate Region of Interests (ROI's) and Extract Time-Series Data from Digital Repeat Photography Images
 
 
 Here, we present an interactive open-source toolkit, called xROI[^*], that facilitates the process of time-series extraction and improves the quality of the final data. xROI provides a responsive environment for scientists to interactively:
