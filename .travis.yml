@@ -1,7 +1,9 @@
 language: r
-distro: trusty
-sudo: required
-warnings_are_errors: false
+r:
+  - oldrel
+  - release
+  - devel
+sudo: false
 
 addon:
   packages:
@@ -9,13 +11,10 @@ addon:
    - libgdal1-dev
    - libproj-dev
 
-# Code coverage
 r_packages:
   - covr
-
-
-r_binary_packages:
   - rgdal
 
 after_success:
-- Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'library(covr); codecov()'
+
