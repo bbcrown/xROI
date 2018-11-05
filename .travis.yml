@@ -3,7 +3,8 @@ r:
   - oldrel
   - release
   - devel
-sudo: true
+distro: trusty
+sudo: required
 
 addon:
   packages:
@@ -13,6 +14,8 @@ addon:
 
 r_packages:
   - covr
+
+r_binary_packages:
   - rgdal
 
 after_success:
