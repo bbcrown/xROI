@@ -22,8 +22,3 @@
 #  Rscript -e “xROI::Launch(Interactive = TRUE)”
 #  
 
-## ---- echo=TRUE, eval=FALSE----------------------------------------------
-#  
-#  xROI::Launch('/path/to/extracted/directory/)
-#  
-

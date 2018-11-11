@@ -12,7 +12,7 @@
 
 <meta name="author" content="Bijan Seyednasrollah" />
 
-<meta name="date" content="2018-11-02" />
+<meta name="date" content="2018-11-11" />
 
 <title>Launch xROI</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Launch xROI</h1>
 <h4 class="author"><em>Bijan Seyednasrollah</em></h4>
-<h4 class="date"><em>2018-11-02</em></h4>
+<h4 class="date"><em>2018-11-11</em></h4>
 
 
 
@@ -83,12 +83,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>extract and export time series data characterizing color-based metrics.</li>
 </ol>
 <p>Using <code>xROI</code>, the user can detect FOV shifts with minimal difficulty. The software gives user the opportunity to re-adjust mask files or redraw new ones every time an FOV shift occurs.</p>
-<div id="design" class="section level3">
-<h3>Design</h3>
+<div id="xroi-design" class="section level3">
+<h3>xROI Design</h3>
 <p>R language and Shiny package were used as the main development tool for xROI, while Markdown, HTML, CSS and JavaScript languages were used to smoothen the interactivity. While Shiny apps are primarily used for web-based applications to be used online, we used Shiny for its graphical user interface capabilities. In other words, both UI and server modules are run locally from the same machine and hence no internet connection is required. The xROI’s UI element presents a side-panel for data entry and three main tab-pages, each responsible for a specific task. The server-side element consists of R and shell scripts. Image processing and geospatial features were performed using the <code>Geospatial Data Abstraction Library (GDAL)</code> and the <code>rgdal</code> and <code>raster</code> R packages.</p>
 </div>
-<div id="installation" class="section level3">
-<h3>Installation</h3>
+<div id="install-xroi" class="section level2">
+<h2>Install xROI</h2>
 <p>The xROI R package has been published on The Comprehensive R Archive Network (CRAN). The latest tested xROI package can be installed from the <a href="https://cran.r-project.org/package=xROI">CRAN packages repository</a> by running the following command in an R environment:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">utils<span class="op">::</span><span class="kw">install.packages</span>(<span class="st">'xROI'</span>, <span class="dt">repos =</span> <span class="st">&quot;http://cran.us.r-project.org&quot;</span> )</code></pre></div>
 <p>Alternatively, the latest beta release of xROI can be directly downloaded and installed from the GitHub repository:</p>
@@ -98,30 +98,26 @@ utils<span class="op">::</span><span class="kw">install.packages</span>(<span cl
 devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;bnasr/xROI&quot;</span>)</code></pre></div>
 <p>xROI depends on many R packages including: <code>raster</code>, <code>rgdal</code>, <code>sp</code>, <code>jpeg</code>, <code>tiff</code>, <code>shiny</code>, <code>shinyjs</code>, <code>shinyBS</code>, <code>shinyAce</code>, <code>shinyTime</code>, <code>shinyFiles</code>, <code>shinydashboard</code>, <code>shinythemes</code>, <code>colourpicker</code>, <code>rjson</code>, <code>stringr</code>, <code>data.table</code>, <code>lubridate</code>, <code>plotly</code>, <code>moments</code>, and <code>RCurl</code>. All the required libraries and packages will be automatically installed with installation of xROI. The package offers a fully interactive high-level interface as well as a set of low-level functions for ROI processing.</p>
 </div>
-<div id="how-to-launch-xroi" class="section level3">
-<h3>How to Launch <code>xROI</code></h3>
+<div id="launch-xroi" class="section level2">
+<h2>Launch xROI</h2>
 <p>A comprehensive user manual for low-level image processing using xROI is available from <a href="https://cran.r-project.org/package=xROI/xROI.pdf">xROI.pdf</a>. While the user manual includes a set of examples for each function; here we explain the graphical interactive mode. The interactive mode can be launched from an interactive R environment by the following command.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(xROI)
 <span class="kw">Launch</span>()</code></pre></div>
 <p>or form the command line (e.g. shell in Linux, Terminal in macOS and Command Prompt in Windows machines) where an R engine is already installed by:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rscript <span class="op">-</span>e “xROI<span class="op">::</span><span class="kw">Launch</span>(<span class="dt">Interactive =</span> <span class="ot">TRUE</span>)”</code></pre></div>
 <p>Calling the Launch function opens up the app in the system’s default web browser, offering an example dataset to explore different modules or upload a new dataset of images.</p>
-</div>
-<div id="real-world-example" class="section level3">
-<h3>Real World Example</h3>
-<p>To get some hands-on experience with <code>xROI</code>, we can analyze images from the <a href="https://phenocam.sr.unh.edu/webcam/sites/dukehw/">dukehw</a> of the <strong>PhenoCam</strong> network. You can download the data set from <a href="http://bit.ly/2PzZ2fL">here</a>.</p>
 <p>Follow the steps below:</p>
 <ol style="list-style-type: decimal">
-<li><p>Save and extract the file on your computer.</p></li>
-<li><p>Open the data set in <code>xROI</code>.</p></li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">xROI<span class="op">::</span><span class="kw">Launch</span>(<span class="st">'/path/to/extracted/directory/)</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
 <li><p>Draw and ROI, enter the metadata.</p></li>
 <li><p>Save the metadata and explore its content.</p></li>
-<li><p>Go to the <code>Time series extraction</code> tab. Extract the time-series.</p></li>
 <li><p>Explore if there is any FOV shift in the dataset using the <code>CLI processer</code> tab.</p></li>
+<li><p>Go to the <code>Time series extraction</code> tab. Extract the time-series. Save the output and explore the dataset in R.</p></li>
 </ol>
+</div>
+<div id="end-xroi" class="section level2">
+<h2>End xROI</h2>
+<p>When you are done with the xROI interface you can close the tab in your browser and end the session in R by using one of the following opitons</p>
+<p><strong>In RStudio:</strong> Press the <Esc> key on your keyboard. <strong>In R Terminal:</strong> Press <Ctrl + C> on your keyboard.</p>
 </div>
 </div>
 <div class="footnotes">
