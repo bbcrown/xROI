@@ -58,7 +58,7 @@ Launch()
 
 ```
 
-or form the command line (e.g. shell in Linux, Terminal in macOS and Command Prompt in Windows machines) where an R engine is already installed by:
+or form the command line (e.g., shell in Linux, Terminal in macOS and Command Prompt in Windows machines) where an R engine is already installed by:
 
 ```{r, echo=TRUE, eval=FALSE}
 
@@ -72,9 +72,9 @@ Calling the Launch function opens up the app in the system’s default web brows
 
 Follow the steps below:
 
-1. Draw and ROI, enter the metadata. 
+1. Draw an ROI by clicking on the sample image and enter the metadata. 
 
-2. Save the metadata and explore its content.
+2. Save the ROI and metadata and explore its content on your computer.
 
 3. Explore if there is any FOV shift in the dataset using the `CLI processer` tab.
 
