@@ -84,6 +84,31 @@ Follow the steps below:
 ## Loading files from disk
 By default, xROI can load images and their timings from the filenames (according to the PhenoCam naming convention: sitename_YYYY_MM_DD_HHMMSS.jpg, where it includes the site name, date and time). However, if the files are not named in this format, the user can select the option "From filelist.csv". In this case, the software looks for a comma separated file named “filelist.csv” in the selected directory,to obtain information about how to properly load the dataset. The filelist.csv file contains a list of images and their associated timing and is formatted in comma-separated-values format as follows. The user is responsible for generating the filelist.csv file. Each row includes 1 column for the filename as character strings and six columns for year, month, day, hour, minute and second of the acquisition date and time, in that order. An example file is presented in Appendix A: filelist.csv. User can explore loaded images using the exploring panel.
 
+|:----------------------------|----:|--:|--:|--:|--:|--:|
+|dukehw_2015_01_01_120109.jpg | 2015|  1|  1| 12|  1|  9|
+|dukehw_2015_01_15_120109.jpg | 2015|  1| 15| 12|  1|  9|
+|dukehw_2015_02_01_120110.jpg | 2015|  2|  1| 12|  1| 10|
+|dukehw_2015_02_15_120110.jpg | 2015|  2| 15| 12|  1| 10|
+|dukehw_2015_03_01_120107.jpg | 2015|  3|  1| 12|  1|  7|
+|dukehw_2015_03_15_120108.jpg | 2015|  3| 15| 12|  1|  8|
+|dukehw_2015_04_01_120111.jpg | 2015|  4|  1| 12|  1| 11|
+|dukehw_2015_04_15_120111.jpg | 2015|  4| 15| 12|  1| 11|
+|dukehw_2015_05_01_120108.jpg | 2015|  5|  1| 12|  1|  8|
+|dukehw_2015_05_15_120110.jpg | 2015|  5| 15| 12|  1| 10|
+|dukehw_2015_06_01_120110.jpg | 2015|  6|  1| 12|  1| 10|
+|dukehw_2015_06_15_120109.jpg | 2015|  6| 15| 12|  1|  9|
+|dukehw_2015_07_02_120109.jpg | 2015|  7|  2| 12|  1|  9|
+|dukehw_2015_07_15_120110.jpg | 2015|  7| 15| 12|  1| 10|
+|dukehw_2015_08_01_120109.jpg | 2015|  8|  1| 12|  1|  9|
+|dukehw_2015_08_15_120110.jpg | 2015|  8| 15| 12|  1| 10|
+|dukehw_2015_09_01_120109.jpg | 2015|  9|  1| 12|  1|  9|
+|dukehw_2015_09_15_120109.jpg | 2015|  9| 15| 12|  1|  9|
+|dukehw_2015_10_01_120108.jpg | 2015| 10|  1| 12|  1|  8|
+|dukehw_2015_10_15_120110.jpg | 2015| 10| 15| 12|  1| 10|
+|dukehw_2015_11_01_120109.jpg | 2015| 11|  1| 12|  1|  9|
+|dukehw_2015_11_15_120108.jpg | 2015| 11| 15| 12|  1|  8|
+|dukehw_2015_12_01_120107.jpg | 2015| 12|  1| 12|  1|  7|
+|dukehw_2015_12_15_120109.jpg | 2015| 12| 15| 12|  1|  9|
 
 ## End xROI
 
