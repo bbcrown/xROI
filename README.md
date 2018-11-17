@@ -85,8 +85,7 @@ Follow the steps below:
 By default, xROI can load images and their timings from the filenames (according to the PhenoCam naming convention: sitename_YYYY_MM_DD_HHMMSS.jpg, where it includes the site name, date and time). However, if the files are not named in this format, the user can select the option "From filelist.csv". In this case, the software looks for a comma separated file named “filelist.csv” in the selected directory,to obtain information about how to properly load the dataset. The filelist.csv file contains a list of images and their associated timing and is formatted in comma-separated-values format as follows. The user is responsible for generating the filelist.csv file. Each row includes 1 column for the filename as character strings and six columns for year, month, day, hour, minute and second of the acquisition date and time, in that order. An example file is presented in Appendix A: filelist.csv. User can explore loaded images using the exploring panel.
 
 Here is an example:
-```{}
-"dukehw_2015_01_01_120109.jpg",2015,1,1,12,1,9
+```{}"dukehw_2015_01_01_120109.jpg",2015,1,1,12,1,9
 "dukehw_2015_01_15_120109.jpg",2015,1,15,12,1,9
 "dukehw_2015_02_01_120110.jpg",2015,2,1,12,1,10
 "dukehw_2015_02_15_120110.jpg",2015,2,15,12,1,10
