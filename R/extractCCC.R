@@ -38,6 +38,7 @@ extractCCC <- function(path, m){
   tbl <- as.data.frame(t(apply(ccMat, 2, quantile, probs = c(0, 0.05, 0.10, 0.25, 0.5, 0.75, 0.90, 0.95, 1))))
   rownames(tbl) <- c('r','g','b')
   colnames(tbl) <- c('min','q5', 'q10','q25','q50','q75', 'q90','q95','max')
+  RGB <- colMeans(mrgb)
 
   tbl$cc <- cc
   # tbl$mean <- colMeans(ccMat)
@@ -47,6 +48,7 @@ extractCCC <- function(path, m){
   tbl$brightness <- mean(apply(mrgb, 2, max))
   tbl$darkness <- mean(apply(mrgb, 2, min))
   tbl$contrast <- tbl$brightness - tbl$darkness
+  tbl$RGB <- RGB
   tbl
 }
 

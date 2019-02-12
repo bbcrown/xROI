@@ -30,8 +30,7 @@ extractCCCTimeSeries <- function(rmskList, mIndex, paths){
   }
 
   n <- length(paths)
-  CCCT <- matrix(NA, nrow=n, ncol=30)
-
+  CCCT <- matrix(NA, nrow=n, ncol=33)
 
   # if(exists('session'))
   withProgress(value = 0, message = 'Extracting CCs',
@@ -42,29 +41,39 @@ extractCCCTimeSeries <- function(rmskList, mIndex, paths){
                  tbl <- extractCCC(paths[i],
                                    cbind(m, m, m))
                  if(!is.null(tbl))
-                   CCCT[i,] <- c(tbl$cc, tbl$std,
-                                 tbl$q5, tbl$q10, tbl$q25, tbl$q50, tbl$q75, tbl$q90, tbl$q95,
-                                 # tbl$skewness, tbl$kurtosis,
-                                 tbl$brightness[1], tbl$darkness[1], tbl$contrast[1])
+                   CCCT[i,] <- c( tbl$RGB,
+                                  tbl$cc,
+                                  tbl$std,
+                                  tbl$q5, tbl$q10, tbl$q25, tbl$q50, tbl$q75, tbl$q90, tbl$q95,
+                                  # tbl$skewness,
+                                  # tbl$kurtosis,
+                                  tbl$brightness[1], tbl$darkness[1], tbl$contrast[1])
                  incProgress(1/n)
                  # Sys.sleep(1)
                  # if(i%%20==0)httpuv:::service()
                }
   )
+
   CCCT <- as.data.table(CCCT)
-  colnames(CCCT) <- c('red','green','blue',
-                      # 'r.mean','g.mean','b.mean',
-                      'r.std','g.std','b.std',
-                      'r5', 'g5', 'b5',
-                      'r10', 'g10', 'b10',
-                      'r25', 'g25', 'b25',
-                      'r50', 'g50', 'b50',
-                      'r75', 'g75', 'b75',
-                      'r90', 'g90', 'b90',
-                      'r95', 'g95', 'b95',
+
+  colnames(CCCT) <- c('red', 'green', 'blue',
+                      'rcc','gcc','bcc',
+                      'rcc.std','gcc.std','bcc.std',
+                      'rcc05', 'gcc05', 'bcc05',
+                      'rcc10', 'gcc10', 'bcc10',
+                      'rcc25', 'gcc25', 'bcc25',
+                      'rcc50', 'gcc50', 'bcc50',
+                      'rcc75', 'gcc75', 'bcc75',
+                      'rcc90', 'gcc90', 'bcc90',
+                      'rcc95', 'gcc95', 'bcc95',
                       # 'r.skewness','g.skewness','b.skewness',
                       # 'r.kurtosis','g.kurtosis','b.kurtosis',
                       'brightness','darkness','contrast'
   )
+  CCCT[,grR:=gcc/rcc]
+  CCCT[,rbR:=rcc/bcc]
+  CCCT[,gbR:=gcc/bcc]
+  CCCT[,GRVI:=(gcc - rcc)/(gcc - rcc)]
+  CCCT[, exG:=(2*green - red - blue)]
   CCCT
 }

@@ -821,11 +821,11 @@ getServer <- function(exdir, inputDir = NULL){
 
           yAxis$range <- c(0,1)
           xAxis$range <- c(0,1)
-          cc <- melt(data.frame(red= cvals$rcc, green = cvals$gcc, blue= cvals$bcc),
+          cc <- melt(data.frame(rcc= cvals$rcc, gcc = cvals$gcc, bcc= cvals$bcc),
                      variable.name='band', value.name='cc', id.vars=NULL)
           d <- data.table(time=tvals, cc)
 
-          ccSel <- as.vector(sapply(input$ccBand, switch, R='red', G='green',  B='blue'))
+          ccSel <- as.vector(sapply(input$ccBand, switch, RCC='rcc', GCC='gcc',  BCC='bcc'))
           d <- d[band%in%ccSel]
 
 
@@ -850,16 +850,16 @@ getServer <- function(exdir, inputDir = NULL){
         # cc1 <- melt(cvals[,.(red, green, blue)],
         #             variable.name='band', value.name='cc', id.vars=NULL)
         #
-        cc2 <- rbind(cvals[,.(cc=red, q25=red-r25, q75=r75-red, q5=red-r5, q95=r95-red, q10=red-r10, q90=r90-red, band='red')],
-                     cvals[,.(cc=green, q25=green-g25, q75=g75-green, q5=green-g5, q95=g95-green, q10=green-g10, q90=g90-green, band='green')],
-                     cvals[,.(cc=blue, q25=blue-b25, q75=b75-blue, q5=blue-b5, q95=b95-blue, q10=blue-b10, q90=b90-blue, band='blue')])
+        cc2 <- rbind(cvals[,.(cc=rcc, q25=rcc-rcc25, q75=rcc75-rcc, q5=rcc-rcc05, q95=rcc95-rcc, q10=rcc-rcc10, q90=rcc90-rcc, band='rcc')],
+                     cvals[,.(cc=gcc, q25=gcc-gcc25, q75=gcc75-gcc, q5=gcc-gcc05, q95=gcc95-gcc, q10=gcc-gcc10, q90=gcc90-gcc, band='gcc')],
+                     cvals[,.(cc=bcc, q25=bcc-bcc25, q75=bcc75-bcc, q5=bcc-bcc05, q95=bcc95-bcc, q10=bcc-bcc10, q90=bcc90-bcc, band='bcc')])
 
-        cc2[,band:=factor(band, levels=c('red','green','blue'))]
+        cc2[,band:=factor(band, levels=c('rcc','gcc','bcc'))]
 
         cc <- cc2
 
         d <- data.table(time=tvals, cc)
-        ccSel <- as.vector(sapply(input$ccBand, switch, R='red', B='blue', G="green"))
+        ccSel <- as.vector(sapply(input$ccBand, switch, RCC='rcc', GCC='gcc', BCC = 'bcc'))
 
         dd <- d[band%in%ccSel]
         # d[,band:=as.factor(band)]
