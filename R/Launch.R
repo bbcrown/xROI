@@ -39,7 +39,8 @@
 #' xROI::Launch()
 #'
 #'
-Launch <- function(inputDir= NULL, Interactive = FALSE){
+Launch <- function(inputDir= NULL,
+                   Interactive = FALSE){
   exampleDir <- system.file('example', package = "xROI")
   tmpdir <- tempdir()
   file.copy(exampleDir, tmpdir, recursive = T)

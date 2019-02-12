@@ -36,7 +36,8 @@
 #'
 #'
 getServer <- function(exdir, inputDir = NULL){
-  return(function(input, output, session) {
+  return(
+    function(input, output, session) {
 
     options(warn = -1)
     rv <- reactiveValues(centers = matrix(numeric(), 0, 2),
@@ -605,7 +606,7 @@ getServer <- function(exdir, inputDir = NULL){
     # ----------------------------------------------------------------------
     observeEvent(input$roiName,{
       if(input$roiName=='') return()
-      if(is.null(rv$filetb)) return()
+      if(is.null(rv$filetbl)) return()
       rv$slideShow <- 0
       if(input$roiName=='New ROI') {
         shinyjs::enable('vegType')
