@@ -5,7 +5,7 @@
 #' @return a data.frame with two columns containing day-to-day correlations of the brightness and blue bands
 #' @keywords  FOV shift
 #' @import jpeg
-#' @importFrom stats cor
+#' @importFrom stats cor smooth
 #' @export
 #' @examples
 #'

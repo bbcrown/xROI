@@ -3,6 +3,9 @@ globalVariables(names = c('Year','Month', 'Day', 'Hour', 'Minute', 'Second',
                           'ID', 'Label', 'x', 'y', 'z', '.', 'archive',
                           'mainDataPath', 'middayListPath', 'newpath', 'path', 'filenames',
                           'band', 'blackness',  'conT', 'dukehw', 'empty',
-                          'b5', 'b10', 'b25', 'b75', 'b90', 'b95', 'blue',
-                          'g5', 'g10', 'g25', 'g75', 'g90', 'g95', 'green',
-                          'r5', 'r10', 'r25', 'r75', 'r90', 'r95', 'red'))
+                          'GRVI', 'exG',
+                          'gbR', 'grR', 'rbR',
+                          'red', 'green', 'blue',
+                          'bcc', 'bcc05', 'bcc10', 'bcc25', 'bcc75', 'bcc90', 'bcc95',
+                          'gcc', 'gcc05', 'gcc10', 'gcc25', 'gcc75', 'gcc90', 'gcc95',
+                          'rcc', 'rcc05', 'rcc10', 'rcc25', 'rcc75', 'rcc90', 'rcc95'))
