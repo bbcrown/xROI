@@ -38,7 +38,7 @@ test_that("test writeROI", {
 
 
 test_that("test rasterizeROI", {
-  expect_equal(floor(mean(m)*100), 92)
+  expect_equal(floor(mean(m)*10), 9)
 })
 
 
