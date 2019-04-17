@@ -47,9 +47,12 @@ Launch <- function(inputDir= NULL,
   exampleDir <- file.path(tmpdir, 'example')
   ## Only run examples in interactive R sessions
   if (interactive()|Interactive) {
-    ui <- getUI()
-    server <- getServer(exampleDir, inputDir)
-    shinyApp(ui, server, options = list(launch.browser = TRUE))
+    # ui <- getUI()
+    # server <- getServer(exampleDir, inputDir)
+    # shinyApp(ui, server, options = list(launch.browser = TRUE))
+    appDir <- system.file('app', package = "xROI")
+    writeLines(c(exampleDir, inputDir), paste0(tempdir(), '/ex_in_dir.tmp'))
+    shinyAppDir(appDir = appDir, options = list(launch.browser = TRUE))
   }else{
     print('This function requires an interactive R session!')
   }
