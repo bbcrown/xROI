@@ -1,13 +1,13 @@
 language: r
-distro: trusty
-sudo: required
+dist: trusty
 warnings_are_errors: false
 
-addon:
-  packages:
-   - gdal-bin
-   - libgdal1-dev
-   - libproj-dev
+addons:
+  apt:
+    packages:
+      - gdal-bin
+      - libgdal1-dev
+      - libproj-dev
 
 # Code coverage
 r_packages:
