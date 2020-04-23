@@ -1,3 +1,5 @@
+R_REMOTES_NO_ERRORS_FROM_WARNINGS=tr
+
 language: r
 dist: trusty
 warnings_are_errors: false
@@ -19,3 +21,7 @@ r_binary_packages:
 
 after_success:
 - Rscript -e 'library(covr); codecov()'
+
+env:
+  global:
+    - R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
