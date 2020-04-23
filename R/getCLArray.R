@@ -27,7 +27,9 @@ getCLArray <- function(files){
   pb <- txtProgressBar(1, n, style = 3)
 
 
-  withProgress(value = 0, message = 'Extracting CLI',
+  #if shiny
+  if(!is.null(session)){
+    withProgress(value = 0, message = 'Extracting CLI',
                for(i in 1:n){
                  if(isTRUE(session$input$stopThis))break
 
@@ -64,6 +66,45 @@ getCLArray <- function(files){
                  # if(i%%20==0)httpuv:::service()
                }
   )
+  }else{
+                 for(i in 1:n){
+
+                   if(is.na(files[i]))
+                     cl <- matrix(0, res[1], 3)
+                   else
+                     cl <- getCL(files[i])
+
+                   if(is.na(cl)) cl <- matrix(0, res[1], 3)
+                   r <- cl[,1]
+                   g <- cl[,2]
+                   b <- cl[,3]
+
+                   if(nrow(cl)!=res[1]){
+                     message(paste('wrong dimensions at', i, files[i], 'resampling ...'))
+                     x1 <- (0:(nrow(cl)-1))/nrow(cl)
+                     x2 <- (0:(res[1]-1))/res[1]
+                     r <- approx(x1, r, x2)$y
+                     g <- approx(x1, g, x2)$y
+                     b <- approx(x1, b, x2)$y
+                     r[is.na(r)] <- 0
+                     g[is.na(g)] <- 0
+                     b[is.na(b)] <- 0
+                   }
+
+                   clArray[,i,1] <- r
+                   clArray[,i,2] <- g
+                   clArray[,i,3] <- b
+
+                   setTxtProgressBar(pb, i)
+
+                   # incProgress(1/n)
+                   # Sys.sleep(1)
+                   # if(i%%20==0)httpuv:::service()
+                 }
+
+}
+  #if not shiny
+
   clArray
 }
 
