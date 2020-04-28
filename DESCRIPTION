@@ -14,11 +14,16 @@ Imports:
     lubridate,
     methods,
     moments,
-    plotly,
     RCurl,
     raster,
     rgdal,
     rjson,
+    sp,
+    stats,
+    stringr,
+    tiff,
+    utils
+Suggests: 
     shiny,
     shinyjs,
     shinyBS,
@@ -27,18 +32,13 @@ Imports:
     shinyFiles,
     shinydashboard,
     shinythemes,
-    sp,
-    stats,
-    stringr,
-    tiff,
-    utils
-Suggests: 
-  knitr,
-  testthat,
-  rmarkdown,
+    knitr,
+    testthat,
+    rmarkdown,
+    plotly,
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
 BugReports: https://github.com/bnasr/xROI/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
