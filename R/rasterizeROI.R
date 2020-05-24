@@ -5,6 +5,7 @@
 #' @param imgSize a numeric vector, size of the final raster
 #' @return a binary matrix. matrix of the mask file.
 #' @keywords  Rasterize ROI Polygons
+#' @rawNamespace import(raster, except = c(intersect, union, quantile))
 #' @export
 #' @examples
 #'

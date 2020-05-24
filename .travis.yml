@@ -1,3 +1,5 @@
+R_REMOTES_NO_ERRORS_FROM_WARNINGS=tr
+
 language: r
 dist: trusty
 warnings_are_errors: false

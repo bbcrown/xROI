@@ -6,7 +6,7 @@
 #' @param col a character string, color value of the plotted mask
 #' @keywords  plot mask raster
 #' @export
-#' @importFrom raster raster
+#' @rawNamespace import(raster, except = c(intersect, union, quantile))
 #' @import rgdal
 #' @import sp
 #' @import jpeg
