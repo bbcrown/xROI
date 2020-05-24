@@ -7,19 +7,11 @@
 #' @keywords  Run Launch xROI App
 #' @export
 #' @import shiny
-#' @rawNamespace import(shinyjs, except = c(runExample, updateColourInput, reset, colourPicker, colourInput, show, click, removeClass))
-#' @import shinythemes
-#' @rawNamespace import(plotly, except = select)
 #' @rawNamespace import(raster, except = quantile)
 #' @import rgdal
 #' @import sp
 #' @import jpeg
 #' @import tiff
-#' @import shinyBS
-#' @import shinyAce
-#' @import shinyTime
-#' @import shinyFiles
-#' @import shinydashboard
 #' @rawNamespace import(colourpicker, except = runExample)
 #' @import rjson
 #' @import RCurl
