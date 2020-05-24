@@ -6,7 +6,6 @@
 #' @return The function returns statistical metrics for each color channel. It returns NULL, if dimensions do not agree.
 #' @keywords  exract chromatic coordinates rcc gcc bcc
 #' @export
-#' @rawNamespace import(raster, except = quantile)
 #' @import rgdal
 #' @import sp
 #' @import jpeg

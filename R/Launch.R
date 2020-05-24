@@ -7,7 +7,6 @@
 #' @keywords  Run Launch xROI App
 #' @export
 #' @import shiny
-#' @rawNamespace import(raster, except = quantile)
 #' @import rgdal
 #' @import sp
 #' @import jpeg

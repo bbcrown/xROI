@@ -7,11 +7,6 @@
 #' @return This function returns statistical metrics for each color channel. The function returns NULL, if dimensions do not agree.
 #' @keywords  exract chromatic coordinates rcc gcc bcc
 #' @export
-#' @rawNamespace import(raster, except = quantile)
-#' @import rgdal
-#' @import sp
-#' @import jpeg
-#' @import tiff
 #' @importFrom stats approx na.omit sd quantile
 #' @import shiny
 #' @rawNamespace import(shinyjs, except = c(runExample, updateColourInput, reset, colourPicker, colourInput, show, click, removeClass))

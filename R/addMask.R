@@ -6,7 +6,7 @@
 #' @param col a character string, color value of the plotted mask
 #' @keywords  plot mask raster
 #' @export
-#' @rawNamespace import(raster, except = quantile)
+#' @importFrom raster raster
 #' @import rgdal
 #' @import sp
 #' @import jpeg
@@ -25,7 +25,7 @@
 #'
 addMask <- function(mask, add = TRUE, col='black'){
   wd <- getwd()
-  setwd(tmpDir())
+  setwd(gettmpdir())
   writeTIFF(mask*1, 'tmp.tif')
   rmask <- raster('tmp.tif')
   rmask[rmask!=0] <- NA
