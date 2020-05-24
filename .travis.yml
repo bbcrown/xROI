@@ -13,10 +13,6 @@ addons:
 r_packages:
   - covr
 
-
-r_binary_packages:
-  - rgdal
-
 after_success:
 - Rscript -e 'library(covr); codecov()'
 
