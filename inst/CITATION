@@ -10,9 +10,10 @@ citEntry(entry = "Article",
                     "Andrew D. Richardson"),
          title = "Data extraction from digital repeat photography using xROI: An interactive framework to facilitate the process",
          publisher = "Elsevier",
-         journal = "in review",
-         year = 2018,
-         textVersion = "Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson (2018). Data extraction from digital repeat photography using xROI: An interactive framework to facilitate the process, in review.")
+         journal = "ISPRS Journal of Photogrammetry and Remote Sensing",
+         year = 2019,
+         url = "https://doi.org/10.1016/j.isprsjprs.2019.04.009",
+         textVersion = "Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson (2018). Data extraction from digital repeat photography using xROI: An interactive framework to facilitate the process, ISPRS Journal of Photogrammetry and Remote Sensing 152 (2019): 132-144.")
 
 
 citEntry(entry = "Manual",
@@ -21,5 +22,5 @@ citEntry(entry = "Manual",
                     "Andrew D. Richardson"),
          title = "xROI: A Toolkit to Delineate Region of Interests (ROI's) and Extract Time-series Data from Digital Repeat Photography Images",
          year = 2018,
-         url = "http://doi.org/10.5281/zenodo.1202273",
+         url = "https://doi.org/10.5281/zenodo.1202273",
          textVersion = "Bijan Seyednasrollah, Thomas Milliman, Andrew D. Richardson (2018). xROI: A Toolkit to Delineate Region of Interests (ROI's) and Extract Time-series Data from Digital Repeat Photography Images DOI:10.5281/zenodo.1202273")
