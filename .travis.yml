@@ -1,6 +1,18 @@
+arch: amd64
 language: r
-dist: trusty
-warnings_are_errors: false
+
+jobs:
+  include:
+   - os: linux
+     r: oldrel
+   - os: linux
+     r: release
+   - os: linux
+     r: devel
+   - os: osx
+     r: oldrel
+   - os: osx
+     r: release
 
 addons:
   apt:
@@ -15,7 +27,3 @@ r_packages:
 
 after_success:
 - Rscript -e 'library(covr); codecov()'
-
-env:
-  global:
-    - R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
