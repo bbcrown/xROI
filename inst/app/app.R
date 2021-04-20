@@ -1192,7 +1192,7 @@ ui <- fluidPage(
                           # conditionalPanel('input.siteName!=""', {
                           fluidRow(
                             column(1, strong('from', style='font-size:70%;font-weight: bold;')),
-                            column(5, dateInput('maskStartDate', label = NULL, value =  '2001-01-01', startview = 'day')),
+                            column(5, dateInput('maskStartDate', label = NULL, value =  '2001-01-01')),
                             column(4, textInput('maskStartTime', label = NULL, value = '00:08:00')),
                             column(1, '')
                           )
@@ -1201,7 +1201,7 @@ ui <- fluidPage(
                           # conditionalPanel('input.siteName!=""', {
                           fluidRow(
                             column(1, strong('to', style='font-size:70%')),
-                            column(5, dateInput('maskEndDate', label = NULL, value =  '2099-01-01', startview = 'day')),
+                            column(5, dateInput('maskEndDate', label = NULL, value =  '2099-01-01')),
                             column(4, textInput('maskEndTime', label = NULL, value = '00:20:00')),
                             column(1, checkboxInput('openEnd', label = '', value = F))
                           )
