@@ -1,13 +1,13 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1204366.svg)](https://doi.org/10.5281/zenodo.1204366) 
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
-[![Travis CI](https://travis-ci.org/bnasr/xROI.svg?branch=master)](https://travis-ci.org/bnasr/xROI) 
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/) 
+[![Travis CI](https://travis-ci.org/bnasr/xROI.svg?branch=master)](https://travis-ci.com/bnasr/xROI) 
 [![Coverage status](https://codecov.io/gh/bnasr/xROI/branch/master/graph/badge.svg)](https://codecov.io/github/bnasr/xROI?branch=master) 
 
-[![CRAN status](http://www.r-pkg.org/badges/version-last-release/xROI)](https://cran.r-project.org/package=xROI) 
-[![Downloads](http://cranlogs.r-pkg.org/badges/xROI?color=brightgreen)](http://www.r-pkg.org/pkg/xROI) 
-[![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/xROI?color=brightgreen)](http://www.r-pkg.org/pkg/xROI) 
+[![CRAN status](https://www.r-pkg.org/badges/version-last-release/xROI)](https://cran.r-project.org/package=xROI) 
+[![Downloads](https://cranlogs.r-pkg.org/badges/xROI?color=brightgreen)](https://www.r-pkg.org/pkg/xROI) 
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/xROI?color=brightgreen)](https://www.r-pkg.org/pkg/xROI) 
 
 
 # xROI: Delineate Region of Interests (ROI's) and Extract Time-Series Data from Digital Repeat Photography Images
@@ -30,7 +30,7 @@ The xROI R package has been published on The Comprehensive R Archive Network (CR
 
 ```{r, echo=TRUE, eval=FALSE}
 
-utils::install.packages('xROI', repos = "http://cran.us.r-project.org" )
+utils::install.packages('xROI', repos = "https://cran.us.r-project.org" )
 
 ```
 
@@ -38,7 +38,7 @@ Alternatively, the latest beta release of xROI can be directly downloaded and in
 ```{r, echo=TRUE, eval=FALSE}
 
 # install devtools first
-utils::install.packages('devtools', repos = "http://cran.us.r-project.org" )
+utils::install.packages('devtools', repos = "https://cran.us.r-project.org" )
 
 devtools::install_github("bnasr/xROI")
 
