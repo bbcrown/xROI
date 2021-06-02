@@ -20,7 +20,7 @@ This function plots a CLI array on the graphics.
 \examples{
 f <- system.file(package = 'xROI', 'dukehw-cli.jpg')
 jp <- jpeg::readJPEG(f)
-plotCLArray(jp)
+if(interactive())plotCLArray(jp)
 
 }
 \keyword{bcc}

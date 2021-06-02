@@ -23,7 +23,7 @@ This funciton plots a jpeg image as a raster given image path.
 }
 \examples{
 f <- system.file(package = 'xROI', 'dukehw.jpg')
-plotJPEG(f)
+if (interactive() ) plotJPEG(f)
 
 }
 \keyword{bcc}

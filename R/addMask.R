@@ -25,12 +25,12 @@
 #'
 addMask <- function(mask, add = TRUE, col='black'){
   wd <- getwd()
-  setwd(gettmpdir())
+  setwd(tempdir())
   writeTIFF(mask*1, 'tmp.tif')
   rmask <- raster('tmp.tif')
   rmask[rmask!=0] <- NA
 
-  plot(rmask,legend=F, add=add, col=col)
+  if( interactive()) plot(rmask,legend=F, add=add, col=col)
   file.remove('tmp.tif')
   setwd(wd)
   return(0)

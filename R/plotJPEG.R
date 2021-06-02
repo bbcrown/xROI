@@ -13,7 +13,7 @@
 #' @export
 #' @examples
 #' f <- system.file(package = 'xROI', 'dukehw.jpg')
-#' plotJPEG(f)
+#' if (interactive() ) plotJPEG(f)
 #'
 plotJPEG <- function(path, add=FALSE, xlim = NULL, ylim = NULL)
 {

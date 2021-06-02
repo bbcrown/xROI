@@ -1,7 +1,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1204366.svg)](https://doi.org/10.5281/zenodo.1204366) 
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/) 
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) 
 [![Travis CI](https://travis-ci.org/bnasr/xROI.svg?branch=master)](https://travis-ci.com/bnasr/xROI) 
 [![Coverage status](https://codecov.io/gh/bnasr/xROI/branch/master/graph/badge.svg)](https://codecov.io/github/bnasr/xROI?branch=master) 
 

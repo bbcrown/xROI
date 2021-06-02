@@ -12,7 +12,7 @@ globalVariables(names = c('Year','Month', 'Day', 'Hour', 'Minute', 'Second',
 
 
 
-.onLoad <- function(libname, pkgname) {
+.onAttach <- function(libname, pkgname) {
   citation =
   'To cite xROI in publications, please cite both the paper and the R package:
 
